@@ -1,0 +1,4 @@
+Main-Class: Summarizer
+Class-path: groovy-all.jar
+Built-By: J. R. Valverde (CNB-CSIC) <jrvalverde@cnb.csic.es>
+Sealed: true

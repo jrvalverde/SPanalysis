@@ -1,0 +1,902 @@
+import ij.measure.Calibration;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.DefaultTableCellRenderer;
+import ij.gui.Roi;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.Rectangle;
+import java.io.File;
+import ij.ImagePlus;
+import ij.process.ImageProcessor;
+import java.awt.Image;
+import ij.process.ColorProcessor;
+import java.awt.image.BufferedImage;
+import ij.ImageStack;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import ij.IJ;
+import ij.measure.ResultsTable;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import javax.swing.ListModel;
+import java.awt.BorderLayout;
+import java.awt.Stroke;
+import java.awt.Paint;
+import org.jfree.chart.plot.IntervalMarker;
+import java.awt.BasicStroke;
+import java.awt.Color;
+import javax.swing.JSlider;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.Box;
+import java.awt.Font;
+import javax.swing.JSeparator;
+import javax.swing.JToggleButton;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import javax.swing.JTabbedPane;
+import java.awt.LayoutManager;
+import java.awt.Container;
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.BorderFactory;
+import java.awt.Dimension;
+import java.awt.Component;
+import javax.swing.table.TableModel;
+import jwizardcomponent.JWizardComponents;
+import javax.swing.Icon;
+import java.util.List;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.DefaultListModel;
+import javax.swing.JComboBox;
+import org.jfree.chart.ChartPanel;
+import javax.swing.JSpinner;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JTable;
+import javax.swing.JCheckBox;
+import jwizardcomponent.JWizardPanel;
+
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
+public class ChooserWizardPanel extends JWizardPanel
+{
+    JCheckBox checkRPicker;
+    static JTable tableTrack;
+    static JTable tableImages;
+    static DefaultTableModel modelTrack;
+    JScrollPane jScrollPaneTrack;
+    JScrollPane jScrollPaneImages;
+    JSpinner filterMin;
+    JSpinner filterMax;
+    HistogramFilterVersion hs2;
+    ChartPanel histogram;
+    JComboBox<String> comboFilters;
+    static DefaultListModel<String> modelListClass;
+    static DefaultListModel<String> modelListFeature;
+    static JList<String> classList;
+    static JList<String> featureList;
+    static JLabel labelReset;
+    static String trackEnable;
+    static String command;
+    List<Integer> indexesToReset;
+    List<Integer> indexesToReset1;
+    List<Integer> tracksID;
+    List<Integer> tracksID1;
+    List<Integer> indexesTI;
+    static Icon iconTrackCell;
+    static Object[] columnNamesTrack;
+    Thread refreshThread;
+    Thread csvThread;
+    Thread pngThread;
+    Thread paintThread;
+    Thread tInsideThread;
+    Thread tOutsideThread;
+    Thread enableThread;
+    Thread disableThread;
+    Thread slMinThread;
+    Thread filterMinThread;
+    Thread slMaxThread;
+    Thread filterMaxThread;
+    Thread filtersThread;
+    Thread pickerThread;
+    Thread classThread;
+    Thread remClassThread;
+    Thread addThread;
+    Thread remThread;
+    
+    static {
+        ChooserWizardPanel.trackEnable = "";
+    }
+    
+    public ChooserWizardPanel(final JWizardComponents wizardComponents) {
+        super(wizardComponents, "");
+        this.hs2 = new HistogramFilterVersion();
+        ChooserWizardPanel.tableTrack = new JTable();
+        (ChooserWizardPanel.tableImages = new JTable()).setModel(FirstWizardPanel.modelImages);
+        ChooserWizardPanel.tableImages.getColumnModel().getColumn(0).setPreferredWidth(90);
+        ChooserWizardPanel.tableImages.getColumnModel().getColumn(1).setPreferredWidth(460);
+        ChooserWizardPanel.tableImages.getColumnModel().getColumn(2).setPreferredWidth(80);
+        ChooserWizardPanel.modelTrack = new DefaultTableModel();
+        ChooserWizardPanel.columnNamesTrack = new Object[] { "Label", "TRACK_ID", "TRACK_INDEX", "NUMBER_SPOTS", "NUMBER_GAPS", "NUMBER_SPLITS", "NUMBER_MERGES", "NUMBER_COMPLEX", "LONGEST_GAP", "TRACK_DURATION", "TRACK_START", "TRACK_STOP", "TRACK_DISPLACEMENT", "TRACK_X_LOCATION", "TRACK_Y_LOCATION", "TRACK_Z_LOCATION", "TRACK_MEAN_SPEED", "TRACK_MAX_SPEED", "TRACK_MIN_SPEED", "TRACK_MEDIAN_SPEED", "TRACK_STD_SPEED", "TRACK_MEAN_QUALITY", "TOTAL_DISTANCE_TRAVELED", "MAX_DISTANCE_TRAVELED", "CONFINMENT_RATIO", "MEAN_STRAIGHT_LINE_SPEED", "LINEARITY_OF_FORWARD_PROGRESSION", "MEAN_DIRECTIONAL_CHANGE_RATE", "TOTAL_ABSOLUTE_ANGLE_XY", "TOTAL_ABSOLUTE_ANGLE_YZ", "TOTAL_ABSOLUTE_ANGLE_ZX" };
+        ChooserWizardPanel.tableTrack.setModel(ChooserWizardPanel.modelTrack);
+        ChooserWizardPanel.tableTrack.setSelectionMode(1);
+        (this.jScrollPaneTrack = new JScrollPane(ChooserWizardPanel.tableTrack)).setPreferredSize(new Dimension(590, 240));
+        this.jScrollPaneTrack.setBorder(BorderFactory.createTitledBorder(""));
+        (this.jScrollPaneImages = new JScrollPane(ChooserWizardPanel.tableImages)).setPreferredSize(new Dimension(590, 240));
+        this.jScrollPaneImages.setBorder(BorderFactory.createTitledBorder(""));
+        final JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, 1));
+        final JTabbedPane tabbedPaneTrack = new JTabbedPane(1);
+        final ImageIcon iconTrack = FirstWizardPanel.createImageIcon("images/track.jpg");
+        ChooserWizardPanel.iconTrackCell = new ImageIcon(iconTrack.getImage().getScaledInstance(18, 20, 4));
+        final JButton pngButton = new JButton();
+        final ImageIcon iconPng = FirstWizardPanel.createImageIcon("images/save.png");
+        final Icon pngCell = new ImageIcon(iconPng.getImage().getScaledInstance(18, 20, 4));
+        pngButton.setIcon(pngCell);
+        pngButton.setToolTipText("Click to capture spots overlay.");
+        final JPanel panelPng = new JPanel(new FlowLayout(0));
+        panelPng.add(pngButton);
+        final JButton csvButton = new JButton();
+        final ImageIcon iconCsv = FirstWizardPanel.createImageIcon("images/csv.png");
+        final Icon csvCell = new ImageIcon(iconCsv.getImage().getScaledInstance(18, 20, 4));
+        csvButton.setIcon(csvCell);
+        csvButton.setToolTipText("Click to export your spots table selection.");
+        final JPanel panelCsv = new JPanel(new FlowLayout(0));
+        panelCsv.add(csvButton);
+        final JPanel panelPngCsv = new JPanel(new FlowLayout(0));
+        panelPngCsv.add(panelPng);
+        panelPngCsv.add(panelCsv);
+        tabbedPaneTrack.addTab("TRACKS ", ChooserWizardPanel.iconTrackCell, mainPanel, "Display Track Analysis");
+        tabbedPaneTrack.setTabLayoutPolicy(1);
+        final JButton refreshButton = new JButton();
+        final ImageIcon iconRefresh = FirstWizardPanel.createImageIcon("images/refresh.png");
+        final Icon refreshCell = new ImageIcon(iconRefresh.getImage().getScaledInstance(18, 20, 4));
+        refreshButton.setIcon(refreshCell);
+        refreshButton.setToolTipText("Click this button to get Track analysis");
+        final JToggleButton paintButton = new JToggleButton();
+        final ImageIcon iconPaint = FirstWizardPanel.createImageIcon("images/paint.png");
+        final Icon paintCell = new ImageIcon(iconPaint.getImage().getScaledInstance(18, 20, 4));
+        paintButton.setIcon(paintCell);
+        paintButton.setToolTipText("Click this button to display labeled-Tracks");
+        final JToggleButton tInsideButton = new JToggleButton();
+        final ImageIcon iconTI = FirstWizardPanel.createImageIcon("images/tinside.png");
+        final Icon TICell = new ImageIcon(iconTI.getImage().getScaledInstance(18, 20, 4));
+        tInsideButton.setIcon(TICell);
+        tInsideButton.setToolTipText("Click this button to toggle inside Tracks.");
+        final JToggleButton tOutsideButton = new JToggleButton();
+        final ImageIcon iconTO = FirstWizardPanel.createImageIcon("images/toutside.png");
+        final Icon TOCell = new ImageIcon(iconTO.getImage().getScaledInstance(18, 20, 4));
+        tOutsideButton.setIcon(TOCell);
+        tOutsideButton.setToolTipText("Click this button to toggle outside Tracks.");
+        final JButton enableButton = new JButton();
+        final ImageIcon iconEnable = FirstWizardPanel.createImageIcon("images/enable.png");
+        final Icon enableCell = new ImageIcon(iconEnable.getImage().getScaledInstance(18, 20, 4));
+        enableButton.setIcon(enableCell);
+        enableButton.setToolTipText("Click this button to enable your selection");
+        final JButton disableButton = new JButton();
+        final ImageIcon iconDisable = FirstWizardPanel.createImageIcon("images/disable.png");
+        final Icon disableCell = new ImageIcon(iconDisable.getImage().getScaledInstance(18, 20, 4));
+        disableButton.setIcon(disableCell);
+        disableButton.setToolTipText("Click this button to disable your selection");
+        final JPanel buttonPanel = new JPanel(new FlowLayout(2));
+        final JSeparator separator1 = new JSeparator(1);
+        final JSeparator separator2 = new JSeparator(1);
+        final Dimension dime = separator1.getPreferredSize();
+        dime.height = refreshButton.getPreferredSize().height;
+        separator1.setPreferredSize(dime);
+        separator2.setPreferredSize(dime);
+        this.checkRPicker = new JCheckBox(" Track Picker");
+        final JLabel filterLabel = new JLabel("  ➠ Track Analysis : ");
+        filterLabel.setFont(new Font("Dialog", 1, 13));
+        filterLabel.setBorder(BorderFactory.createRaisedBevelBorder());
+        final JPanel filterPanel = new JPanel(new FlowLayout(0));
+        filterPanel.add(filterLabel);
+        filterPanel.add(this.checkRPicker);
+        filterPanel.add(Box.createHorizontalStrut(20));
+        final JPanel filterMain = new JPanel(new FlowLayout(0));
+        filterMain.add(filterPanel);
+        buttonPanel.add(refreshButton);
+        buttonPanel.add(paintButton);
+        buttonPanel.add(separator1);
+        buttonPanel.add(enableButton);
+        buttonPanel.add(disableButton);
+        buttonPanel.add(separator2);
+        buttonPanel.add(tInsideButton);
+        buttonPanel.add(tOutsideButton);
+        filterMain.add(buttonPanel);
+        mainPanel.add(this.jScrollPaneImages);
+        mainPanel.add(Box.createVerticalStrut(5));
+        mainPanel.add(filterMain);
+        mainPanel.add(this.jScrollPaneTrack);
+        final JLabel settingsLabel = new JLabel("  ➠ Settings for Filters/Classes : ");
+        settingsLabel.setFont(new Font("Dialog", 1, 13));
+        settingsLabel.setBorder(BorderFactory.createRaisedBevelBorder());
+        final JPanel settingsPanel = new JPanel(new FlowLayout(0));
+        settingsPanel.add(settingsLabel);
+        mainPanel.add(settingsPanel);
+        final JPanel filtersMin = new JPanel(new FlowLayout(0));
+        (this.filterMin = new JSpinner(new SpinnerNumberModel(30, 0, 5000, 1))).setPreferredSize(new Dimension(60, 20));
+        final JSlider sliderMin = new JSlider(0, 300, 50);
+        sliderMin.setPreferredSize(new Dimension(150, 15));
+        final JLabel filterMinLabel = new JLabel("              Min :  ");
+        filtersMin.add(filterMinLabel);
+        filtersMin.add(sliderMin);
+        filtersMin.add(Box.createHorizontalStrut(2));
+        filtersMin.add(this.filterMin);
+        final JPanel filtersMax = new JPanel(new FlowLayout(0));
+        (this.filterMax = new JSpinner(new SpinnerNumberModel(200, 0, 5000, 1))).setPreferredSize(new Dimension(60, 20));
+        final JSlider sliderMax = new JSlider(0, 300, 150);
+        sliderMax.setPreferredSize(new Dimension(150, 15));
+        final JLabel filterMaxLabel = new JLabel("              Max :  ");
+        filtersMax.add(filterMaxLabel);
+        filtersMax.add(sliderMax);
+        filtersMax.add(Box.createHorizontalStrut(2));
+        filtersMax.add(this.filterMax);
+        final JPanel boxPanel2 = new JPanel();
+        boxPanel2.setLayout(new BoxLayout(boxPanel2, 1));
+        final IntervalMarker intervalMarker = new IntervalMarker(0.0, 0.0, (Paint)new Color(229, 255, 204), (Stroke)new BasicStroke(), (Paint)new Color(0, 102, 0), (Stroke)new BasicStroke(1.5f), 0.5f);
+        this.histogram = this.hs2.createChartPanel("", new double[] { 0.0, 0.0, 0.0 }, 100, intervalMarker);
+        final JPanel chartPanel2 = new JPanel(new BorderLayout());
+        chartPanel2.setPreferredSize(new Dimension(390, 180));
+        chartPanel2.add((Component)this.histogram);
+        boxPanel2.add(chartPanel2);
+        final JPanel controlPanel2 = this.hs2.createControlPanel();
+        boxPanel2.add(controlPanel2);
+        final JPanel filtersMain2 = new JPanel();
+        filtersMain2.setLayout(new BoxLayout(filtersMain2, 1));
+        filtersMain2.add(boxPanel2);
+        filtersMain2.add(filtersMin);
+        filtersMain2.add(filtersMax);
+        final JLabel featureTrack = new JLabel(" » Track-Features :  ");
+        featureTrack.setFont(new Font("Dialog", 1, 13));
+        this.comboFilters = new JComboBox<String>();
+        for (int i = 1; i < ChooserWizardPanel.columnNamesTrack.length; ++i) {
+            this.comboFilters.addItem((String)ChooserWizardPanel.columnNamesTrack[i]);
+        }
+        this.comboFilters.setPreferredSize(new Dimension(130, 25));
+        this.comboFilters.setSelectedIndex(0);
+        this.comboFilters.setOpaque(true);
+        final JPanel panelFilters = new JPanel(new FlowLayout(0));
+        final JSeparator separator3 = new JSeparator(1);
+        final Dimension dime2 = separator3.getPreferredSize();
+        dime2.height = filtersMain2.getPreferredSize().height;
+        separator3.setPreferredSize(dime2);
+        panelFilters.add(filtersMain2);
+        panelFilters.add(separator3);
+        ChooserWizardPanel.modelListClass = new DefaultListModel<String>();
+        ChooserWizardPanel.classList = new JList<String>(ChooserWizardPanel.modelListClass);
+        ChooserWizardPanel.modelListFeature = new DefaultListModel<String>();
+        ChooserWizardPanel.featureList = new JList<String>(ChooserWizardPanel.modelListFeature);
+        final ColorEditorTrack colorEditor = new ColorEditorTrack(ChooserWizardPanel.featureList);
+        final JScrollPane scrollListFilter = new JScrollPane(ChooserWizardPanel.featureList);
+        final JScrollPane scrollListClass = new JScrollPane(ChooserWizardPanel.classList);
+        final Dimension d = ChooserWizardPanel.featureList.getPreferredSize();
+        d.width = 150;
+        d.height = 90;
+        scrollListFilter.setPreferredSize(d);
+        scrollListClass.setPreferredSize(d);
+        final JPanel filterPanelButtons = new JPanel(new FlowLayout(0));
+        final JPanel classPanelButtons = new JPanel();
+        classPanelButtons.setLayout(new BoxLayout(classPanelButtons, 1));
+        filterPanelButtons.add(scrollListFilter);
+        final JPanel fButtonsPanel = new JPanel();
+        fButtonsPanel.setLayout(new BoxLayout(fButtonsPanel, 1));
+        final JButton addButton = new JButton();
+        final ImageIcon iconAdd = FirstWizardPanel.createImageIcon("images/add.png");
+        final Icon addCell = new ImageIcon(iconAdd.getImage().getScaledInstance(14, 16, 4));
+        addButton.setIcon(addCell);
+        addButton.setToolTipText("Click this button to add features");
+        final JButton remButton = new JButton();
+        final ImageIcon iconRem = FirstWizardPanel.createImageIcon("images/remove.png");
+        final Icon remCell = new ImageIcon(iconRem.getImage().getScaledInstance(14, 16, 4));
+        remButton.setIcon(remCell);
+        remButton.setToolTipText("Click this button to remove features");
+        final JButton classButton = new JButton();
+        final ImageIcon iconClass = FirstWizardPanel.createImageIcon("images/classes.png");
+        final Icon classCell = new ImageIcon(iconClass.getImage().getScaledInstance(14, 16, 4));
+        classButton.setIcon(classCell);
+        classButton.setToolTipText("Click this button to create a class.");
+        final JButton remClassButton = new JButton();
+        remClassButton.setIcon(remCell);
+        remClassButton.setToolTipText("Click this button to remove a class.");
+        fButtonsPanel.add(addButton);
+        fButtonsPanel.add(remButton);
+        filterPanelButtons.add(fButtonsPanel);
+        classPanelButtons.add(classButton);
+        classPanelButtons.add(remClassButton);
+        final JPanel classPanel = new JPanel(new FlowLayout(0));
+        classPanel.add(scrollListClass);
+        classPanel.add(classPanelButtons);
+        final JPanel boxPanel3 = new JPanel();
+        boxPanel3.setLayout(new BoxLayout(boxPanel3, 1));
+        boxPanel3.add(this.comboFilters);
+        boxPanel3.add(Box.createHorizontalStrut(5));
+        boxPanel3.add(filterPanelButtons);
+        boxPanel3.add(Box.createHorizontalStrut(5));
+        boxPanel3.add(classPanel);
+        boxPanel3.add(panelPngCsv);
+        panelFilters.add(boxPanel3);
+        mainPanel.add(panelFilters);
+        this.add((Component)tabbedPaneTrack);
+        this.createMovieTable();
+        paintButton.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(final ItemEvent ev) {
+                (ChooserWizardPanel.this.paintThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (ev.getStateChange() == 1) {
+                            ChooserWizardPanel.this.paintAndDisableAction();
+                        }
+                        else if (ev.getStateChange() == 2) {
+                            ChooserWizardPanel.this.resetAndEnableAction();
+                        }
+                    }
+                })).start();
+            }
+        });
+        csvButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                (ChooserWizardPanel.this.csvThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        final List<String> columnTrackHead = new ArrayList<String>();
+                        for (int j = 0; j < ChooserWizardPanel.modelTrack.getColumnCount(); ++j) {
+                            columnTrackHead.add(ChooserWizardPanel.modelTrack.getColumnName(j));
+                        }
+                        final ResultsTable rt = new ResultsTable(Integer.valueOf(ChooserWizardPanel.modelTrack.getRowCount()));
+                        if (rt != null) {
+                            rt.reset();
+                        }
+                        for (int i = 0; i < ChooserWizardPanel.modelTrack.getRowCount(); ++i) {
+                            for (int k = 0; k < ChooserWizardPanel.modelTrack.getColumnCount(); ++k) {
+                                if (ChooserWizardPanel.modelTrack.getValueAt(i, ChooserWizardPanel.modelTrack.getColumnCount() - 1) == Boolean.TRUE) {
+                                    if (columnTrackHead.get(k).equals(columnTrackHead.get(0)) == Boolean.TRUE) {
+                                        rt.setValue((String)columnTrackHead.get(k), i, ((JLabel)ChooserWizardPanel.modelTrack.getValueAt(i, k)).getText());
+                                    }
+                                    else {
+                                        rt.setValue((String)columnTrackHead.get(k), i, ChooserWizardPanel.modelTrack.getValueAt(i, k).toString());
+                                    }
+                                }
+                            }
+                        }
+                        rt.show("Resutls tracks");
+                    }
+                })).start();
+            }
+        });
+        pngButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                (ChooserWizardPanel.this.pngThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (IJ.getImage() == null) {
+                            IJ.error("You must have an image window active.");
+                        }
+                        if (IJ.getImage() != null) {
+                            final JFrame pngFrame = new JFrame();
+                            final JFileChooser fileChooser = new JFileChooser();
+                            fileChooser.setFileSelectionMode(1);
+                            fileChooser.setDialogTitle("Specify a directory to save");
+                            final int userSelection = fileChooser.showSaveDialog(pngFrame);
+                            if (userSelection == 0) {
+                                final File fileToSave = fileChooser.getSelectedFile();
+                                int firstFrame = 0;
+                                int lastFrame = 0;
+                                if (ProcessTrackMateXml.displayer.getImp().getNFrames() > 1) {
+                                    firstFrame = Math.max(1, Math.min(IJ.getImage().getNFrames(), 1));
+                                    lastFrame = Math.min(IJ.getImage().getNFrames(), Math.max(IJ.getImage().getNFrames(), 1));
+                                }
+                                if (ProcessTrackMateXml.displayer.getImp().getNSlices() > 1) {
+                                    firstFrame = Math.max(1, Math.min(IJ.getImage().getNSlices(), 1));
+                                    lastFrame = Math.min(IJ.getImage().getNSlices(), Math.max(IJ.getImage().getNSlices(), 1));
+                                }
+                                final Rectangle bounds = ProcessTrackMateXml.displayer.getImp().getCanvas().getBounds();
+                                final int width = bounds.width;
+                                final int height = bounds.height;
+                                final int nCaptures = lastFrame - firstFrame + 1;
+                                final ImageStack stack = new ImageStack(width, height);
+                                final int channel = ProcessTrackMateXml.displayer.getImp().getChannel();
+                                final int slice = ProcessTrackMateXml.displayer.getImp().getSlice();
+                                ProcessTrackMateXml.displayer.getImp().getCanvas().hideZoomIndicator(true);
+                                for (int frame = firstFrame; frame <= lastFrame; ++frame) {
+                                    ProcessTrackMateXml.displayer.getImp().setPositionWithoutUpdate(channel, slice, frame);
+                                    final BufferedImage bi = new BufferedImage(width, height, 2);
+                                    ProcessTrackMateXml.displayer.getImp().getCanvas().paint(bi.getGraphics());
+                                    final ColorProcessor cp = new ColorProcessor((Image)bi);
+                                    final int index = ProcessTrackMateXml.displayer.getImp().getStackIndex(channel, slice, frame);
+                                    stack.addSlice(ProcessTrackMateXml.displayer.getImp().getImageStack().getSliceLabel(index), (ImageProcessor)cp);
+                                }
+                                ProcessTrackMateXml.displayer.getImp().getCanvas().hideZoomIndicator(false);
+                                final ImagePlus capture = new ImagePlus("TrackMate capture of " + ProcessTrackMateXml.displayer.getImp().getShortTitle(), stack);
+                                transferCalibration(ProcessTrackMateXml.displayer.getImp(), capture);
+                                IJ.saveAs(capture, "Tiff", String.valueOf(fileToSave.getAbsolutePath()) + File.separator + "Capture Overlay for " + IJ.getImage().getShortTitle());
+                            }
+                        }
+                    }
+                })).start();
+            }
+        });
+        refreshButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                (ChooserWizardPanel.this.refreshThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ChooserWizardPanel.trackEnable = "trackEnable";
+                        ProcessTrackMateXml.tracksVisible = true;
+                        ProcessTrackMateXml.spotsVisible = false;
+                        final ProcessTrackMateXml ptx = new ProcessTrackMateXml();
+                        ptx.processTrackMateXml();
+                    }
+                })).start();
+            }
+        });
+        enableButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                (ChooserWizardPanel.this.enableThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ChooserWizardPanel.this.enableTracks();
+                    }
+                })).start();
+            }
+        });
+        disableButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                (ChooserWizardPanel.this.disableThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ChooserWizardPanel.this.disableTracks();
+                    }
+                })).start();
+            }
+        });
+        this.checkRPicker.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(final ItemEvent e) {
+                (ChooserWizardPanel.this.pickerThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (e.getStateChange() == 1) {
+                            ChooserWizardPanel.command = "enable";
+                        }
+                        if (e.getStateChange() == 2) {
+                            ChooserWizardPanel.command = null;
+                            ProcessTrackMateXml.selectionModel.clearSpotSelection();
+                            ProcessTrackMateXml.selectionModel.clearSelection();
+                        }
+                    }
+                })).start();
+            }
+        });
+        sliderMin.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(final ChangeEvent e) {
+                (ChooserWizardPanel.this.slMinThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ChooserWizardPanel.this.filterMin.setValue(sliderMin.getValue());
+                        intervalMarker.setStartValue((double)sliderMin.getValue());
+                    }
+                })).start();
+            }
+        });
+        this.filterMin.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(final ChangeEvent e) {
+                (ChooserWizardPanel.this.filterMinThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        sliderMin.setValue((int)ChooserWizardPanel.this.filterMin.getValue());
+                        intervalMarker.setStartValue((double)(int)ChooserWizardPanel.this.filterMin.getValue());
+                    }
+                })).start();
+            }
+        });
+        sliderMax.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(final ChangeEvent e) {
+                (ChooserWizardPanel.this.slMaxThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ChooserWizardPanel.this.filterMax.setValue(sliderMax.getValue());
+                        intervalMarker.setEndValue((double)sliderMax.getValue());
+                    }
+                })).start();
+            }
+        });
+        this.filterMax.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(final ChangeEvent e) {
+                (ChooserWizardPanel.this.filterMaxThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        sliderMax.setValue((int)ChooserWizardPanel.this.filterMax.getValue());
+                        intervalMarker.setEndValue((double)(int)ChooserWizardPanel.this.filterMax.getValue());
+                    }
+                })).start();
+            }
+        });
+        tInsideButton.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(final ItemEvent ev) {
+                (ChooserWizardPanel.this.tInsideThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (ev.getStateChange() == 1) {
+                            ChooserWizardPanel.this.toggleInsideAction();
+                        }
+                        else if (ev.getStateChange() == 2) {
+                            ChooserWizardPanel.this.resetToggleInsideAction();
+                        }
+                    }
+                })).start();
+            }
+        });
+        this.comboFilters.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                (ChooserWizardPanel.this.filtersThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        final String selectedName = (String)ChooserWizardPanel.this.comboFilters.getSelectedItem();
+                        final int selectedIndex = ChooserWizardPanel.this.comboFilters.getSelectedIndex();
+                        double[] values = null;
+                        values = new double[ChooserWizardPanel.tableTrack.getRowCount()];
+                        for (int r = 0; r < ChooserWizardPanel.tableTrack.getRowCount(); ++r) {
+                            for (int c = 0; c < ChooserWizardPanel.tableTrack.getColumnCount(); ++c) {
+                                values[r] = Double.parseDouble((String)ChooserWizardPanel.tableTrack.getValueAt(r, selectedIndex + 2));
+                            }
+                        }
+                        double max = values[0];
+                        for (int i = 1; i < values.length; ++i) {
+                            if (values[i] > max) {
+                                max = values[i];
+                            }
+                        }
+                        sliderMin.setMinimum(0);
+                        sliderMin.setMaximum((int)max);
+                        sliderMax.setMinimum(0);
+                        sliderMax.setMaximum((int)max);
+                        ChooserWizardPanel.this.hs2.addHistogramSeries(selectedName, values, (int)max, intervalMarker);
+                    }
+                })).start();
+            }
+        });
+        classButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                (ChooserWizardPanel.this.classThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ColorEditorTrack.myFrame.setVisible(true);
+                        colorEditor.setClassAction();
+                    }
+                })).start();
+            }
+        });
+        remClassButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                (ChooserWizardPanel.this.remClassThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        final String classSelectedValue = ChooserWizardPanel.classList.getSelectedValue();
+                        final int[] classSelectedIndex = ChooserWizardPanel.classList.getSelectedIndices();
+                        for (int i = 0; i < ChooserWizardPanel.modelTrack.getRowCount(); ++i) {
+                            if (((JLabel)ChooserWizardPanel.modelTrack.getValueAt(i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(1))).getText().equals(classSelectedValue)) {
+                                ChooserWizardPanel.modelTrack.setValueAt(ChooserWizardPanel.labelReset, i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(1));
+                            }
+                        }
+                        for (int i = 0; i < classSelectedIndex.length; ++i) {
+                            ChooserWizardPanel.modelListClass.removeElementAt(classSelectedIndex[i]);
+                        }
+                    }
+                })).start();
+            }
+        });
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                (ChooserWizardPanel.this.addThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        final List<String> listFilters = new ArrayList<String>();
+                        if (ChooserWizardPanel.featureList.getModel().getSize() < 1) {
+                            ChooserWizardPanel.modelListFeature.addElement(String.valueOf(ChooserWizardPanel.this.comboFilters.getSelectedItem()) + ":  [" + ChooserWizardPanel.this.filterMin.getValue() + "," + ChooserWizardPanel.this.filterMax.getValue() + "]");
+                        }
+                        if (ChooserWizardPanel.featureList.getModel().getSize() >= 1) {
+                            for (int i = 0; i < ChooserWizardPanel.featureList.getModel().getSize(); ++i) {
+                                listFilters.add(String.valueOf(ChooserWizardPanel.featureList.getModel().getElementAt(i).substring(0, ChooserWizardPanel.featureList.getModel().getElementAt(i).lastIndexOf(":"))));
+                            }
+                            if (!listFilters.contains(ChooserWizardPanel.this.comboFilters.getSelectedItem().toString())) {
+                                ChooserWizardPanel.modelListFeature.addElement(String.valueOf(ChooserWizardPanel.this.comboFilters.getSelectedItem()) + ":  [" + ChooserWizardPanel.this.filterMin.getValue() + "," + ChooserWizardPanel.this.filterMax.getValue() + "]");
+                            }
+                            if (listFilters.contains(ChooserWizardPanel.this.comboFilters.getSelectedItem().toString())) {
+                                return;
+                            }
+                        }
+                    }
+                })).start();
+            }
+        });
+        remButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+                (ChooserWizardPanel.this.remThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            final int[] indexes = ChooserWizardPanel.featureList.getSelectedIndices();
+                            for (int i = 0; i < indexes.length; ++i) {
+                                ChooserWizardPanel.modelListFeature.remove(indexes[i]);
+                            }
+                        }
+                        catch (Exception e1) {
+                            e1.printStackTrace();
+                        }
+                    }
+                })).start();
+            }
+        });
+        tOutsideButton.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(final ItemEvent ev) {
+                (ChooserWizardPanel.this.tOutsideThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (ev.getStateChange() == 1) {
+                            ChooserWizardPanel.this.toggleOutsideAction();
+                        }
+                        else if (ev.getStateChange() == 2) {
+                            ChooserWizardPanel.this.resetToggleInsideAction();
+                        }
+                    }
+                })).start();
+            }
+        });
+    }
+    
+    public void toggleOutsideAction() {
+        Roi mainRoi = null;
+        if (IJ.getImage().getRoi().getType() == 0) {
+            mainRoi = IJ.getImage().getRoi();
+        }
+        this.indexesTI = new ArrayList<Integer>();
+        for (int i = 0; i < ChooserWizardPanel.modelTrack.getRowCount(); ++i) {
+            if (mainRoi.contains((int)IJ.getImage().getCalibration().getRawX(Double.parseDouble(ChooserWizardPanel.modelTrack.getValueAt(i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(13)).toString())), (int)IJ.getImage().getCalibration().getRawY(Double.parseDouble(ChooserWizardPanel.modelTrack.getValueAt(i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(14)).toString()))) == Boolean.FALSE) {
+                this.indexesTI.add(i);
+                ChooserWizardPanel.modelTrack.setValueAt(false, i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(0));
+                final int trackID = Integer.parseInt((String)ChooserWizardPanel.tableTrack.getValueAt(i, 2));
+                ProcessTrackMateXml.model.beginUpdate();
+                try {
+                    ProcessTrackMateXml.model.setTrackVisibility(Integer.valueOf(trackID), false);
+                }
+                finally {
+                    ProcessTrackMateXml.model.endUpdate();
+                }
+                ProcessTrackMateXml.model.endUpdate();
+                ProcessTrackMateXml.displayer.refresh();
+            }
+        }
+    }
+    
+    public void toggleInsideAction() {
+        Roi mainRoi = null;
+        if (IJ.getImage().getRoi().getType() == 0) {
+            mainRoi = IJ.getImage().getRoi();
+        }
+        this.indexesTI = new ArrayList<Integer>();
+        for (int i = 0; i < ChooserWizardPanel.modelTrack.getRowCount(); ++i) {
+            if (mainRoi.contains((int)IJ.getImage().getCalibration().getRawX(Double.parseDouble(ChooserWizardPanel.modelTrack.getValueAt(i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(13)).toString())), (int)IJ.getImage().getCalibration().getRawY(Double.parseDouble(ChooserWizardPanel.modelTrack.getValueAt(i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(14)).toString()))) == Boolean.TRUE) {
+                this.indexesTI.add(i);
+                ChooserWizardPanel.modelTrack.setValueAt(false, i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(0));
+                final int trackID = Integer.parseInt((String)ChooserWizardPanel.tableTrack.getValueAt(i, 2));
+                ProcessTrackMateXml.model.beginUpdate();
+                try {
+                    ProcessTrackMateXml.model.setTrackVisibility(Integer.valueOf(trackID), false);
+                }
+                finally {
+                    ProcessTrackMateXml.model.endUpdate();
+                }
+                ProcessTrackMateXml.model.endUpdate();
+                ProcessTrackMateXml.displayer.refresh();
+            }
+        }
+    }
+    
+    public void resetToggleInsideAction() {
+        for (int row = 0; row < ChooserWizardPanel.modelTrack.getRowCount(); ++row) {
+            ChooserWizardPanel.modelTrack.setValueAt(true, ChooserWizardPanel.tableTrack.convertRowIndexToModel(row), ChooserWizardPanel.tableTrack.convertColumnIndexToModel(0));
+            final int trackID = Integer.parseInt((String)ChooserWizardPanel.tableTrack.getValueAt(row, 2));
+            ProcessTrackMateXml.model.beginUpdate();
+            try {
+                ProcessTrackMateXml.model.setTrackVisibility(Integer.valueOf(trackID), true);
+            }
+            finally {
+                ProcessTrackMateXml.model.endUpdate();
+            }
+            ProcessTrackMateXml.model.endUpdate();
+            ProcessTrackMateXml.displayer.refresh();
+        }
+    }
+    
+    public static void createTrackTable() {
+        (ChooserWizardPanel.modelTrack = new DefaultTableModel(ProcessTrackMateXml.dataTrack, ProcessTrackMateXml.columnHeadersTrack) {
+            @Override
+            public Class<?> getColumnClass(final int column) {
+                if (this.getRowCount() > 0) {
+                    final Object value = this.getValueAt(0, column);
+                    if (value != null) {
+                        return this.getValueAt(0, column).getClass();
+                    }
+                }
+                return super.getColumnClass(column);
+            }
+        }).addColumn("Enable");
+        ChooserWizardPanel.tableTrack.setModel(ChooserWizardPanel.modelTrack);
+        ChooserWizardPanel.tableTrack.moveColumn(ChooserWizardPanel.tableTrack.getColumnCount() - 1, 0);
+        ChooserWizardPanel.tableTrack.setSelectionBackground(new Color(229, 255, 204));
+        ChooserWizardPanel.tableTrack.setSelectionForeground(new Color(0, 102, 0));
+        final DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(0);
+        ChooserWizardPanel.tableTrack.setDefaultRenderer(String.class, centerRenderer);
+        ChooserWizardPanel.tableTrack.setAutoResizeMode(0);
+        ChooserWizardPanel.tableTrack.setRowHeight(45);
+        ChooserWizardPanel.tableTrack.setAutoCreateRowSorter(true);
+        ChooserWizardPanel.tableTrack.getTableHeader().setDefaultRenderer(new SimpleHeaderRenderer());
+        for (int u = 0; u < ChooserWizardPanel.tableTrack.getColumnCount(); ++u) {
+            ChooserWizardPanel.tableTrack.getColumnModel().getColumn(u).setPreferredWidth(90);
+        }
+        for (int u = 3; u < ChooserWizardPanel.tableTrack.getColumnCount(); ++u) {
+            ChooserWizardPanel.tableTrack.getColumnModel().getColumn(u).setPreferredWidth(130);
+        }
+        for (int i = 0; i < ChooserWizardPanel.tableTrack.getRowCount(); ++i) {
+            ChooserWizardPanel.tableTrack.setValueAt(true, i, 0);
+        }
+        ChooserWizardPanel.tableTrack.getColumnModel().getColumn(1).setCellRenderer(new Renderer());
+        (ChooserWizardPanel.labelReset = new JLabel()).setText("");
+        ChooserWizardPanel.labelReset.setOpaque(true);
+        ChooserWizardPanel.labelReset.setBackground(new Color(214, 217, 223));
+        for (int i = 0; i < ChooserWizardPanel.modelTrack.getRowCount(); ++i) {
+            ChooserWizardPanel.modelTrack.setValueAt(ChooserWizardPanel.labelReset, i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(1));
+        }
+    }
+    
+    public void enableTracks() {
+        this.indexesToReset1 = new ArrayList<Integer>();
+        this.tracksID1 = new ArrayList<Integer>();
+        final int[] selectedRows = ChooserWizardPanel.tableTrack.getSelectedRows();
+        for (int i = 0; i < selectedRows.length; ++i) {
+            this.indexesToReset1.add(selectedRows[i]);
+            ChooserWizardPanel.modelTrack.setValueAt(true, selectedRows[i], ChooserWizardPanel.tableTrack.convertColumnIndexToModel(0));
+            this.tracksID1.add(Integer.parseInt((String)ChooserWizardPanel.tableTrack.getValueAt(selectedRows[i], 2)));
+        }
+        for (int row = 0; row < this.tracksID1.size(); ++row) {
+            ProcessTrackMateXml.model.beginUpdate();
+            try {
+                ProcessTrackMateXml.model.setTrackVisibility(Integer.valueOf(this.tracksID1.get(row)), true);
+            }
+            finally {
+                ProcessTrackMateXml.model.endUpdate();
+            }
+            ProcessTrackMateXml.model.endUpdate();
+            ProcessTrackMateXml.displayer.refresh();
+        }
+    }
+    
+    public void disableTracks() {
+        this.indexesToReset1 = new ArrayList<Integer>();
+        this.tracksID1 = new ArrayList<Integer>();
+        final int[] selectedRows = ChooserWizardPanel.tableTrack.getSelectedRows();
+        for (int i = 0; i < selectedRows.length; ++i) {
+            this.indexesToReset1.add(selectedRows[i]);
+            ChooserWizardPanel.modelTrack.setValueAt(false, selectedRows[i], ChooserWizardPanel.tableTrack.convertColumnIndexToModel(0));
+            this.tracksID1.add(Integer.parseInt((String)ChooserWizardPanel.tableTrack.getValueAt(selectedRows[i], 2)));
+        }
+        for (int row = 0; row < this.tracksID1.size(); ++row) {
+            ProcessTrackMateXml.model.beginUpdate();
+            try {
+                ProcessTrackMateXml.model.setTrackVisibility(Integer.valueOf(this.tracksID1.get(row)), false);
+            }
+            finally {
+                ProcessTrackMateXml.model.endUpdate();
+            }
+            ProcessTrackMateXml.model.endUpdate();
+            ProcessTrackMateXml.displayer.refresh();
+        }
+    }
+    
+    public void createMovieTable() {
+        ChooserWizardPanel.tableImages.setSelectionBackground(new Color(229, 255, 204));
+        ChooserWizardPanel.tableImages.setSelectionForeground(new Color(0, 102, 0));
+        final DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(0);
+        ChooserWizardPanel.tableImages.setDefaultRenderer(String.class, centerRenderer);
+        ChooserWizardPanel.tableImages.setAutoResizeMode(0);
+        ChooserWizardPanel.tableImages.setRowHeight(95);
+        ChooserWizardPanel.tableImages.setAutoCreateRowSorter(true);
+        ChooserWizardPanel.tableImages.getTableHeader().setDefaultRenderer(new SimpleHeaderRenderer());
+        ChooserWizardPanel.tableImages.setModel(FirstWizardPanel.modelImages);
+    }
+    
+    public void paintAndDisableAction() {
+        this.indexesToReset = new ArrayList<Integer>();
+        this.tracksID = new ArrayList<Integer>();
+        for (int i = 0; i < ChooserWizardPanel.modelTrack.getRowCount(); ++i) {
+            if (((JLabel)ChooserWizardPanel.modelTrack.getValueAt(i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(1))).getBackground().equals(new Color(214, 217, 223)) == Boolean.TRUE) {
+                this.indexesToReset.add(i);
+                ChooserWizardPanel.modelTrack.setValueAt(false, i, ChooserWizardPanel.tableTrack.convertColumnIndexToModel(0));
+                this.tracksID.add(Integer.parseInt((String)ChooserWizardPanel.tableTrack.getValueAt(i, 2)));
+            }
+        }
+        for (int row = 0; row < this.tracksID.size(); ++row) {
+            ProcessTrackMateXml.model.beginUpdate();
+            try {
+                ProcessTrackMateXml.model.setTrackVisibility(Integer.valueOf(this.tracksID.get(row)), false);
+            }
+            finally {
+                ProcessTrackMateXml.model.endUpdate();
+            }
+            ProcessTrackMateXml.model.endUpdate();
+            ProcessTrackMateXml.displayer.refresh();
+        }
+    }
+    
+    public void resetAndEnableAction() {
+        for (int i = 0; i < this.indexesToReset.size(); ++i) {
+            ChooserWizardPanel.modelTrack.setValueAt(true, ChooserWizardPanel.tableTrack.convertRowIndexToModel(this.indexesToReset.get(i)), ChooserWizardPanel.tableTrack.convertColumnIndexToModel(0));
+        }
+        for (int row = 0; row < this.tracksID.size(); ++row) {
+            ProcessTrackMateXml.model.beginUpdate();
+            try {
+                ProcessTrackMateXml.model.setTrackVisibility(Integer.valueOf(this.tracksID.get(row)), true);
+            }
+            finally {
+                ProcessTrackMateXml.model.endUpdate();
+            }
+            ProcessTrackMateXml.model.endUpdate();
+        }
+        ProcessTrackMateXml.displayer.refresh();
+    }
+    
+    public void update() {
+        this.setNextButtonEnabled(true);
+        this.setFinishButtonEnabled(true);
+        this.setBackButtonEnabled(true);
+    }
+    
+    public void next() {
+        this.switchPanel(2);
+    }
+    
+    public void back() {
+        this.switchPanel(0);
+    }
+    
+    private static final void transferCalibration(final ImagePlus from, final ImagePlus to) {
+        final Calibration fc = from.getCalibration();
+        final Calibration tc = to.getCalibration();
+        tc.setUnit(fc.getUnit());
+        tc.setTimeUnit(fc.getTimeUnit());
+        tc.frameInterval = fc.frameInterval;
+        final double mag = from.getCanvas().getMagnification();
+        tc.pixelWidth = fc.pixelWidth / mag;
+        tc.pixelHeight = fc.pixelHeight / mag;
+        tc.pixelDepth = fc.pixelDepth;
+    }
+}

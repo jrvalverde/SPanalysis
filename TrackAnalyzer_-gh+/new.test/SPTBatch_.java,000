@@ -1,0 +1,75 @@
+// Java Program to illustrate Runnable Interface in threads
+// as multiple inheritance is not allowed
+
+// Importing basic packages
+import java.io.*;
+import java.util.*;
+
+// Class 1
+// Helper class implementing Runnable interface
+class SPTBatch_ implements Runnable {
+//class SPTBatch_ extends Thread {
+    public String s;
+    
+    public SPTBatch_(String xml, String imgdir) {
+        this.s = xml + " " + imgdir;
+    }
+    
+    public void res(String txt) {
+        System.out.println(txt + ":" + s);
+    }
+
+    // run() method inside this class
+    public void run()
+    {
+        // Iterating to get more execution of threads
+        for (int i = 0; i < 5; i++) {
+
+            // Print statement whenever run() method
+            // of this class is called
+            System.out.println("SPTBatch_ "+ this.s);
+
+            // Getting sleep method in try block to
+            // check for any exceptions
+            try {
+                // Making the thread pause for a certain
+                // time using sleep() method
+                Thread.sleep(1000);
+            }
+
+            // Catch block to handle the exceptions
+            catch (Exception e) {
+            }
+        }
+    }
+}
+
+// Class 2
+// Helper class implementing Runnable interface
+class MyThread2 implements Runnable {
+
+    // run() method inside this class
+    public void run()
+    {
+        for (int i = 0; i < 5; i++) {
+
+            // Print statement whenever run() method
+            // of this class is called
+            System.out.println("Thread2");
+
+            // Getting sleep method in try block to
+            // check for any exceptions
+            try {
+
+                // Making the thread pause for a certain
+                // time
+                // using sleep() method
+                Thread.sleep(1000);
+            }
+
+            // Catch block to handle the exceptions
+            catch (Exception e) {
+            }
+        }
+    }
+}

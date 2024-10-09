@@ -1,0 +1,9 @@
+TrackAnalyzer_.java:206: error: cannot find symbol
+						SPTBatch_ sptBatch = new SPTBatch_(xmlPath, imagesPath);
+						^
+  symbol: class SPTBatch_
+TrackAnalyzer_.java:206: error: cannot find symbol
+						SPTBatch_ sptBatch = new SPTBatch_(xmlPath, imagesPath);
+						                         ^
+  symbol: class SPTBatch_
+2 errors

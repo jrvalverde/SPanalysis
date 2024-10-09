@@ -1,0 +1,976 @@
+TrackAnalyzer_.java:61: error: cannot find symbol
+          println(ex.getMessage());
+          ^
+  symbol:   method println(String)
+  location: class TrackAnalyzer_
+TrackAnalyzer_.java:63: error: cannot find symbol
+          println(ex.getMessage());
+          ^
+  symbol:   method println(String)
+  location: class TrackAnalyzer_
+TrackAnalyzer_.java:65: error: cannot find symbol
+          println(ex.getMessage());
+          ^
+  symbol:   method println(String)
+  location: class TrackAnalyzer_
+./STScatterPlot.java:409: error: cannot find symbol
+      Function2D curve = new LogarithmicFunction2D(coefficients[0], coefficients[1]);
+                             ^
+  symbol:   class LogarithmicFunction2D
+  location: class STScatterPlot
+./STScatterPlot.java:505: error: cannot find symbol
+      Function2D curve = new ExponentialFunction2D(coefficients[0], coefficients[1]);
+                             ^
+  symbol:   class ExponentialFunction2D
+  location: class STScatterPlot
+./STScatterPlot.java:682: error: cannot find symbol
+            new LogarithmicFunction2D(coefficients[0], coefficients[1]);
+                ^
+  symbol:   class LogarithmicFunction2D
+  location: class STScatterPlot
+./STScatterPlot.java:709: error: cannot find symbol
+            new LogarithmicFunction2D(coefficients[0], coefficients[1]);
+                ^
+  symbol:   class LogarithmicFunction2D
+  location: class STScatterPlot
+./SPTBatch_.java:549: warning: [deprecation] setHeading(int,String) in ResultsTable has been deprecated
+               SPTBatch_.this.rtSpot.setHeading(MAX, (String)columHeadersFinalSpot[MAX]);
+                                    ^
+./SPTBatch_.java:563: warning: [deprecation] setHeading(int,String) in ResultsTable has been deprecated
+               SPTBatch_.this.rtLink.setHeading(MAX, (String)columHeadersFinalLink[MAX]);
+                                    ^
+./SPTBatch_.java:569: warning: [deprecation] setHeading(int,String) in ResultsTable has been deprecated
+               SPTBatch_.this.rtTrack.setHeading(MAX, (String)columHeadersFinalTrack[MAX]);
+                                     ^
+./SPTBatch_.java:1351: warning: [unchecked] unchecked call to addAll(Collection<? extends E>) as a member of the raw type ArrayList
+                     framesByTrack.addAll(SPTBatch_.this.trackmate.getModel().getTrackModel().trackSpots(trackIDxxx));
+                                         ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:1457: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                              framesByTrackx.add(Float.valueOf(spotJTablex.getModel().getValueAt(y, 8).toString()));
+                                                ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:1458: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                              framesByTrackSort.add(Float.valueOf(spotJTablex.getModel().getValueAt(y, 8).toString()));
+                                                   ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:1462: warning: [unchecked] unchecked method invocation: method sort in class Collections is applied to given types
+                        Collections.sort(framesByTrackSort);
+                                        ^
+  required: List<T>
+  found: ArrayList
+  where T is a type-variable:
+    T extends Comparable<? super T> declared in method <T>sort(List<T>)
+./SPTBatch_.java:1462: warning: [unchecked] unchecked conversion
+                        Collections.sort(framesByTrackSort);
+                                         ^
+  required: List<T>
+  found:    ArrayList
+  where T is a type-variable:
+    T extends Comparable<? super T> declared in method <T>sort(List<T>)
+./PhotobleachingSpotPlot.java:160: error: ';' expected
+               s_tid = Integer.valueOf(SPTBatch_.tableSpot.getModel().getValueAt(i, idxSpotTrackID).toString())
+                                                                                                               ^
+./PhotobleachingSpotPlot.java:228: error: ';' expected
+	    int stack_size = SPTBatch_.imps.getStack().getSize()
+	                                                        ^
+./Chemotaxis_ToolModified.java:25: error: cannot find symbol
+   ChemotaxisGUI gui;
+   ^
+  symbol:   class ChemotaxisGUI
+  location: class Chemotaxis_ToolModified
+./Chemotaxis_ToolModified.java:26: error: cannot find symbol
+   ScalingDialog _dialog;
+   ^
+  symbol:   class ScalingDialog
+  location: class Chemotaxis_ToolModified
+./SPTBatch_.java:2297: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        framesByTrack.add(Float.valueOf(spot.getFeature("FRAME").toString()));
+                                         ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:2299: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        framesByTrackx.add(Float.valueOf(spot.getFeature("POSITION_Y").toString()));
+                                          ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:2300: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        framesByTrackSort.add(Float.valueOf(spot.getFeature("FRAME").toString()));
+                                             ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:2303: warning: [unchecked] unchecked method invocation: method sort in class Collections is applied to given types
+                     Collections.sort(framesByTrackSort);
+                                     ^
+  required: List<T>
+  found: ArrayList
+  where T is a type-variable:
+    T extends Comparable<? super T> declared in method <T>sort(List<T>)
+./SPTBatch_.java:2303: warning: [unchecked] unchecked conversion
+                     Collections.sort(framesByTrackSort);
+                                      ^
+  required: List<T>
+  found:    ArrayList
+  where T is a type-variable:
+    T extends Comparable<? super T> declared in method <T>sort(List<T>)
+./SPTBatch_.java:2311: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        edges.add((Float)trackIDxxxx.get(yx));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:2312: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        edges.add((Float)framesByTrackSort.get(yx) + Float.valueOf("1.0"));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:2313: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        edges.add((Float)xByTrack.get((Integer)indexes.get(yx)));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:2314: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        edges.add((Float)framesByTrackx.get((Integer)indexes.get(yx)));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:2566: warning: [unchecked] unchecked call to addAll(Collection<? extends E>) as a member of the raw type ArrayList
+                     edges.addAll(SPTBatch_.this.trackmate.getModel().getTrackModel().trackEdges(trackIDxx));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:2585: warning: [unchecked] unchecked method invocation: method buildPlotTitle in class SPTBatch_ is applied to given types
+                        String titlex = SPTBatch_.this.buildPlotTitle(featuresThisDimensionx, yDimensionsxx, SPTBatch_.this.xSelectedLink);
+                                                                     ^
+  required: Iterable<String>,Map<String,String>,String
+  found: List<String>,Map,String
+./SPTBatch_.java:2585: warning: [unchecked] unchecked conversion
+                        String titlex = SPTBatch_.this.buildPlotTitle(featuresThisDimensionx, yDimensionsxx, SPTBatch_.this.xSelectedLink);
+                                                                                              ^
+  required: Map<String,String>
+  found:    Map
+./SPTBatch_.java:2586: warning: [unchecked] unchecked method invocation: constructor <init> in class EdgeCollectionDataset is applied to given types
+                        ModelDataset datasetxxx = new EdgeCollectionDataset(SPTBatch_.model, SPTBatch_.selectionModel, SPTBatch_.this.ds, SPTBatch_.this.xSelectedLink, featuresThisDimensionx, edges, true);
+                                                  ^
+  required: Model,SelectionModel,DisplaySettings,String,List<String>,List<DefaultWeightedEdge>,boolean
+  found: Model,SelectionModel,DisplaySettings,String,List<String>,ArrayList,boolean
+./SPTBatch_.java:2586: warning: [unchecked] unchecked conversion
+                        ModelDataset datasetxxx = new EdgeCollectionDataset(SPTBatch_.model, SPTBatch_.selectionModel, SPTBatch_.this.ds, SPTBatch_.this.xSelectedLink, featuresThisDimensionx, edges, true);
+                                                                                                                                                                                                ^
+  required: List<DefaultWeightedEdge>
+  found:    ArrayList
+./SPTBatch_.java:2618: warning: [unchecked] unchecked conversion
+                  Set<String> ySelectedTrackSet = new HashSet();
+                                                  ^
+  required: Set<String>
+  found:    HashSet
+./SPTBatch_.java:2622: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+                     SPTBatch_.this.tracksID = new ArrayList(SPTBatch_.this.trackmate.getModel().getTrackModel().unsortedTrackIDs(true));
+                                               ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./SPTBatch_.java:2622: warning: [unchecked] unchecked conversion
+                     SPTBatch_.this.tracksID = new ArrayList(SPTBatch_.this.trackmate.getModel().getTrackModel().unsortedTrackIDs(true));
+                                               ^
+  required: ArrayList<Integer>
+  found:    ArrayList
+./SPTBatch_.java:2629: warning: [unchecked] unchecked method invocation: method getUniqueValues in class SPTBatch_ is applied to given types
+                     Set<Dimension> dimensionsx = SPTBatch_.this.getUniqueValues(
+                                                                                ^
+  required: Iterable<K>,Map<K,V>
+  found: Set<String>,Map
+  where K,V are type-variables:
+    K extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+    V extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+./SPTBatch_.java:2631: warning: [unchecked] unchecked conversion
+							yDimensionsxx);
+							^
+  required: Map<K,V>
+  found:    Map
+  where K,V are type-variables:
+    K extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+    V extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+./SPTBatch_.java:2629: warning: [unchecked] unchecked conversion
+                     Set<Dimension> dimensionsx = SPTBatch_.this.getUniqueValues(
+                                                                                ^
+  required: Set<Dimension>
+  found:    Set
+./SPTBatch_.java:2638: warning: [unchecked] unchecked method invocation: method getCommonKeys in class SPTBatch_ is applied to given types
+                        List<String> featuresThisDimensionxx = SPTBatch_.getCommonKeys(dimensionx, ySelectedTrackSet, yDimensionsxx);
+                                                                                      ^
+  required: V,Iterable<K>,Map<K,V>
+  found: Dimension,Set<String>,Map
+  where V,K are type-variables:
+    V extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+    K extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+./SPTBatch_.java:2638: warning: [unchecked] unchecked conversion
+                        List<String> featuresThisDimensionxx = SPTBatch_.getCommonKeys(dimensionx, ySelectedTrackSet, yDimensionsxx);
+                                                                                                                      ^
+  required: Map<K,V>
+  found:    Map
+  where K,V are type-variables:
+    K extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+    V extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+./SPTBatch_.java:2638: warning: [unchecked] unchecked conversion
+                        List<String> featuresThisDimensionxx = SPTBatch_.getCommonKeys(dimensionx, ySelectedTrackSet, yDimensionsxx);
+                                                                                      ^
+  required: List<String>
+  found:    List
+./SPTBatch_.java:2684: warning: [unchecked] unchecked conversion
+                  Map<String, Dimension> dimMap = new HashMap(2);
+                                                  ^
+  required: Map<String,Dimension>
+  found:    HashMap
+./SPTBatch_.java:2687: warning: [unchecked] unchecked conversion
+                  Map<String, String> nameMap = new HashMap(2);
+                                                ^
+  required: Map<String,String>
+  found:    HashMap
+./SPTBatch_.java:3002: error: cannot access StatusReporter
+         if (!process.execute()) {
+                     ^
+  class file for loci.common.StatusReporter not found
+./SPTBatch_.java:3007: error: cannot access StatusListener
+               displayHandler.displayOMEXML();
+                             ^
+  class file for loci.common.StatusListener not found
+./ImagePlusReaderModified.java:13: error: package loci.common does not exist
+import loci.common.Location;
+                  ^
+./ImagePlusReaderModified.java:14: error: package loci.common does not exist
+import loci.common.Region;
+                  ^
+./ImagePlusReaderModified.java:15: error: package loci.common does not exist
+import loci.common.StatusEvent;
+                  ^
+./ImagePlusReaderModified.java:18: error: package loci.common.services does not exist
+import loci.common.services.DependencyException;
+                           ^
+./ImagePlusReaderModified.java:19: error: package loci.common.services does not exist
+import loci.common.services.ServiceException;
+                           ^
+./ImagePlusReaderModified.java:20: error: package loci.common.services does not exist
+import loci.common.services.ServiceFactory;
+                           ^
+./ImagePlusReaderModified.java:21: error: package loci.formats does not exist
+import loci.formats.FilePattern;
+                   ^
+./ImagePlusReaderModified.java:22: error: package loci.formats does not exist
+import loci.formats.FormatException;
+                   ^
+./ImagePlusReaderModified.java:23: error: package loci.formats does not exist
+import loci.formats.IFormatReader;
+                   ^
+./ImagePlusReaderModified.java:24: error: package loci.formats.cache does not exist
+import loci.formats.cache.CacheException;
+                         ^
+./ImagePlusReaderModified.java:25: error: package loci.formats.meta does not exist
+import loci.formats.meta.IMetadata;
+                        ^
+./ImagePlusReaderModified.java:26: error: package loci.formats.services does not exist
+import loci.formats.services.OMEXMLService;
+                            ^
+./ImagePlusReaderModified.java:35: error: cannot find symbol
+import loci.plugins.util.LuraWave;
+                        ^
+  symbol:   class LuraWave
+  location: package loci.plugins.util
+./ImagePlusReaderModified.java:38: error: cannot find symbol
+public class ImagePlusReaderModified implements StatusReporter {
+                                                ^
+  symbol: class StatusReporter
+./ImagePlusReaderModified.java:42: error: cannot find symbol
+   public List<StatusListener> listeners = new Vector();
+               ^
+  symbol:   class StatusListener
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:60: error: cannot find symbol
+   public void addStatusListener(StatusListener l) {
+                                 ^
+  symbol:   class StatusListener
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:64: error: cannot find symbol
+   public void removeStatusListener(StatusListener l) {
+                                    ^
+  symbol:   class StatusListener
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:68: error: cannot find symbol
+   public void notifyListeners(StatusEvent e) {
+                               ^
+  symbol:   class StatusEvent
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:277: error: cannot find symbol
+   public ImageProcessor[] readProcessors(ImportProcess process, int no, Region r, boolean thumbnail) {
+                                                                         ^
+  symbol:   class Region
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:428: error: cannot find symbol
+   public String constructImageTitle(IFormatReader r, String file, String seriesName, boolean groupFiles) {
+                                     ^
+  symbol:   class IFormatReader
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:457: error: cannot find symbol
+   public String constructSliceLabel(int ndx, ImageProcessorReader r, IMetadata meta, int series, int zCount, int cCount, int tCount) {
+                                                                      ^
+  symbol:   class IMetadata
+  location: class ImagePlusReaderModified
+./SPTBatch_.java:3017: error: cannot access ReaderWrapper
+               process.getReader().close();
+                                  ^
+  class file for loci.formats.ReaderWrapper not found
+./SPTBatch_.java:3062: warning: [unchecked] unchecked conversion
+      List<Spot> objects = new ArrayList();
+                           ^
+  required: List<Spot>
+  found:    ArrayList
+./SPTBatch_.java:3212: error: no suitable constructor found for TablePanel(List<DefaultWeightedEdge>,List<String>,BiFunction<DefaultWeightedEdge,String,Double>,Map<String,String>,Map<String,String>,Map<String,String>,Map<String,Boolean>,Map<String,String>,Supplier<FeatureColorGenerator<DefaultWeightedEdge>>,Function<DefaultWeightedEdge,String>,String,String,BiConsumer<DefaultWeightedEdge,Color>)
+      TablePanel<DefaultWeightedEdge> table = new TablePanel<DefaultWeightedEdge>(
+                                              ^
+    constructor TablePanel.TablePanel(Iterable<DefaultWeightedEdge>,List<String>,BiFunction<DefaultWeightedEdge,String,Double>,Map<String,String>,Map<String,String>,Map<String,String>,Map<String,Boolean>,Map<String,String>,Supplier<FeatureColorGenerator<DefaultWeightedEdge>>,Function<DefaultWeightedEdge,String>,BiConsumer<DefaultWeightedEdge,String>) is not applicable
+      (actual and formal argument lists differ in length)
+    constructor TablePanel.TablePanel(Iterable<DefaultWeightedEdge>,List<String>,BiFunction<DefaultWeightedEdge,String,Double>,Map<String,String>,Map<String,String>,Map<String,String>,Map<String,Boolean>,Map<String,String>,Supplier<FeatureColorGenerator<DefaultWeightedEdge>>,Function<DefaultWeightedEdge,String>,BiConsumer<DefaultWeightedEdge,String>,String,BiConsumer<DefaultWeightedEdge,Color>) is not applicable
+      (argument mismatch; String cannot be converted to BiConsumer<DefaultWeightedEdge,String>)
+./SPTBatch_.java:3278: warning: [unchecked] unchecked conversion
+      Map<String, String> infoTexts = new HashMap();
+                                      ^
+  required: Map<String,String>
+  found:    HashMap
+./SPTBatch_.java:3333: warning: [unchecked] unchecked cast
+            List<Spot> branch = (List<Spot>)var14.next();
+                                                      ^
+  required: List<Spot>
+  found:    Object
+./SPTBatch_.java:3377: warning: [unchecked] unchecked conversion
+            Set<List<Spot>> successors = new HashSet(outgoingEdges.size());
+                                         ^
+  required: Set<List<Spot>>
+  found:    HashSet
+./SPTBatch_.java:3387: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type HashMap
+            predecessorMap.put(br, predecessors);
+                              ^
+  where K,V are type-variables:
+    K extends Object declared in class HashMap
+    V extends Object declared in class HashMap
+./SPTBatch_.java:3399: warning: [unchecked] unchecked cast
+               List<Spot> branch = (List<Spot>)var40.next();
+                                                         ^
+  required: List<Spot>
+  found:    Object
+./SPTBatch_.java:3406: warning: [unchecked] unchecked cast
+            Set<List<Spot>> preds = (Set<List<Spot>>)predecessorMap.get(br);
+                                                                       ^
+  required: Set<List<Spot>>
+  found:    Object
+./SPTBatch_.java:3411: warning: [unchecked] unchecked cast
+               List<Spot> branch = (List<Spot>)var43.next();
+                                                         ^
+  required: List<Spot>
+  found:    Object
+./SPTBatch_.java:3441: error: no suitable constructor found for TablePanel(List<Branch>,List<String>,BiFunction<Branch,String,Double>,Map<String,String>,Map<String,String>,Map<String,String>,Map<String,Boolean>,Map<String,String>,Supplier<FeatureColorGenerator<Branch>>,Function<Branch,String>,HashMap)
+      TablePanel<SPTBatch_.Branch> table = new TablePanel<SPTBatch_.Branch>(brs, BRANCH_FEATURES, featureFun, BRANCH_FEATURES_NAMES, BRANCH_FEATURES_SHORTNAMES, featureUnits, BRANCH_FEATURES_ISINTS, infoTexts, colorSupplier, labelGenerator, predecessorMap);
+                                           ^
+    constructor TablePanel.TablePanel(Iterable<Branch>,List<String>,BiFunction<Branch,String,Double>,Map<String,String>,Map<String,String>,Map<String,String>,Map<String,Boolean>,Map<String,String>,Supplier<FeatureColorGenerator<Branch>>,Function<Branch,String>,BiConsumer<Branch,String>) is not applicable
+      (argument mismatch; HashMap cannot be converted to BiConsumer<Branch,String>)
+    constructor TablePanel.TablePanel(Iterable<Branch>,List<String>,BiFunction<Branch,String,Double>,Map<String,String>,Map<String,String>,Map<String,String>,Map<String,Boolean>,Map<String,String>,Supplier<FeatureColorGenerator<Branch>>,Function<Branch,String>,BiConsumer<Branch,String>,String,BiConsumer<Branch,Color>) is not applicable
+      (actual and formal argument lists differ in length)
+./SPTBatch_.java:3446: warning: [unchecked] unchecked conversion
+      Set<V> mapping = new LinkedHashSet();
+                       ^
+  required: Set<V>
+  found:    LinkedHashSet
+  where V,K are type-variables:
+    V extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+    K extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+./SPTBatch_.java:3450: error: incompatible types: Object cannot be converted to K
+         K key = (Object)var5.next();
+                 ^
+  where K,V are type-variables:
+    K extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+    V extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+./SPTBatch_.java:3462: error: incompatible types: Object cannot be converted to K
+         K key = (Object)var5.next();
+                 ^
+  where K,V are type-variables:
+    K extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+    V extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+./SPTBatch_.java:3666: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+         SPTBatch_.this.comboSubBg.addItem("Subtract Bg 1");
+                                          ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:3667: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+         SPTBatch_.this.comboSubBg.addItem("Subtract Bg 2");
+                                          ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:3668: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+         SPTBatch_.this.comboSubBg.addItem("Subtract Bg 3");
+                                          ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:3669: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+         SPTBatch_.this.comboSubBg.addItem("Subtract Bg 4");
+                                          ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:3670: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+         SPTBatch_.this.comboSubBg.addItem("Subtract Bg 5");
+                                          ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:3700: warning: [unchecked] unchecked call to DefaultComboBoxModel(E[]) as a member of the raw type DefaultComboBoxModel
+         SPTBatch_.this.comboP = new CheckedComboBox(new DefaultComboBoxModel(items));
+                                                     ^
+  where E is a type-variable:
+    E extends Object declared in class DefaultComboBoxModel
+./SPTBatch_.java:3700: warning: [unchecked] unchecked call to CheckedComboBox(ComboBoxModel<E>) as a member of the raw type CheckedComboBox
+         SPTBatch_.this.comboP = new CheckedComboBox(new DefaultComboBoxModel(items));
+                                 ^
+  where E is a type-variable:
+    E extends CheckableItem declared in class CheckedComboBox
+./SPTBatch_.java:3762: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+         SPTBatch_.this.comboDispTracks.addItem("FULL");
+                                               ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:3763: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+         SPTBatch_.this.comboDispTracks.addItem("LOCAL");
+                                               ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:3764: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+         SPTBatch_.this.comboDispTracks.addItem("LOCAL_BACKWARD");
+                                               ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:3765: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+         SPTBatch_.this.comboDispTracks.addItem("LOCAL_FORWARD");
+                                               ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:4225: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+            SPTBatch_.this.comboSpotsX.addItem(spotItems[ixx]);
+                                              ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:4226: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+            SPTBatch_.this.comboSpotsY.addItem(spotItems[ixx]);
+                                              ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:4265: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+            SPTBatch_.this.comboLinkX.addItem(edgeItems[i]);
+                                             ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:4266: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+            SPTBatch_.this.comboLinkY.addItem(edgeItems[i]);
+                                             ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:4306: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+            SPTBatch_.this.comboTrackX.addItem(trackItems[ix]);
+                                              ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./SPTBatch_.java:4307: warning: [unchecked] unchecked call to addItem(E) as a member of the raw type JComboBox
+            SPTBatch_.this.comboTrackY.addItem(trackItems[ix]);
+                                              ^
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./checkable/CheckedComboBox.java:30: warning: [unchecked] unchecked method invocation: method setRenderer in class JComboBox is applied to given types
+      this.setRenderer((ListCellRenderer)null);
+                      ^
+  required: ListCellRenderer<? super E>
+  found: ListCellRenderer
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./checkable/CheckedComboBox.java:30: warning: [unchecked] unchecked conversion
+      this.setRenderer((ListCellRenderer)null);
+                       ^
+  required: ListCellRenderer<? super E>
+  found:    ListCellRenderer
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./checkable/CheckedComboBox.java:40: warning: [unchecked] unchecked method invocation: method setRenderer in class JComboBox is applied to given types
+      this.setRenderer(new CheckBoxCellRenderer());
+                      ^
+  required: ListCellRenderer<? super E>
+  found: CheckBoxCellRenderer
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./checkable/CheckedComboBox.java:40: warning: [unchecked] unchecked conversion
+      this.setRenderer(new CheckBoxCellRenderer());
+                       ^
+  required: ListCellRenderer<? super E>
+  found:    CheckBoxCellRenderer
+  where E is a type-variable:
+    E extends Object declared in class JComboBox
+./checkable/CheckedComboBox.java:56: error: incompatible types: CheckableItem cannot be converted to E
+         E item = (CheckableItem)this.getItemAt(index);
+                  ^
+  where E is a type-variable:
+    E extends CheckableItem declared in class CheckedComboBox
+./smileModified/ExponentialFamilyMixtureModified.java:60: error: variable i is already defined in method fit(double[],Component[],double,int,double)
+               int i;
+                   ^
+./ColorEditorSpot.java:130: warning: [unchecked] unchecked call to TableRowSorter(M) as a member of the raw type TableRowSorter
+      TableRowSorter<TableModel> rowSorter = new TableRowSorter(modelC);
+                                             ^
+  where M is a type-variable:
+    M extends TableModel declared in class TableRowSorter
+./ColorEditorSpot.java:130: warning: [unchecked] unchecked conversion
+      TableRowSorter<TableModel> rowSorter = new TableRowSorter(modelC);
+                                             ^
+  required: TableRowSorter<TableModel>
+  found:    TableRowSorter
+./ColorEditorSpot.java:152: error: cannot find symbol
+      column1.setCellRenderer(new ResultRendererC());
+                                  ^
+  symbol:   class ResultRendererC
+  location: class ColorEditorSpot
+./ColorEditorSpot.java:156: error: cannot find symbol
+      column2.setCellRenderer(new ResultRendererC());
+                                  ^
+  symbol:   class ResultRendererC
+  location: class ColorEditorSpot
+./ColorEditorSpot.java:160: error: cannot find symbol
+      column3.setCellRenderer(new ResultRendererC());
+                                  ^
+  symbol:   class ResultRendererC
+  location: class ColorEditorSpot
+./ColorEditorSpot.java:393: warning: [unchecked] unchecked conversion
+               List<String> listClasses = new ArrayList();
+                                          ^
+  required: List<String>
+  found:    ArrayList
+./ColorEditorSpot.java:422: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                     features.add(filterFeature[x].substring(0, filterFeature[x].indexOf(":")));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ColorEditorSpot.java:423: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                     featureMin.add(filterFeature[x].substring(filterFeature[x].indexOf("[") + 1, filterFeature[x].indexOf(",")));
+                                   ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ColorEditorSpot.java:424: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                     featureMax.add(filterFeature[x].substring(filterFeature[x].indexOf(",") + 1, filterFeature[x].indexOf("]")));
+                                   ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ColorEditorSpot.java:458: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        features.add(filterFeature[x].substring(0, filterFeature[x].indexOf(":")));
+                                    ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ColorEditorSpot.java:459: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        featureMin.add(filterFeature[x].substring(filterFeature[x].indexOf("[") + 1, filterFeature[x].indexOf(",")));
+                                      ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ColorEditorSpot.java:460: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        featureMax.add(filterFeature[x].substring(filterFeature[x].indexOf(",") + 1, filterFeature[x].indexOf("]")));
+                                      ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ProcessTrackMateXml.java:137: warning: [unchecked] unchecked conversion
+   public static final List<String> FEATURES = new ArrayList(9);
+                                               ^
+  required: List<String>
+  found:    ArrayList
+./ProcessTrackMateXml.java:138: warning: [unchecked] unchecked conversion
+   public static final Map<String, String> FEATURE_NAMES = new HashMap(9);
+                                                           ^
+  required: Map<String,String>
+  found:    HashMap
+./ProcessTrackMateXml.java:139: warning: [unchecked] unchecked conversion
+   public static final Map<String, String> FEATURE_SHORT_NAMES = new HashMap(9);
+                                                                 ^
+  required: Map<String,String>
+  found:    HashMap
+./ProcessTrackMateXml.java:140: warning: [unchecked] unchecked conversion
+   public static final Map<String, Dimension> FEATURE_DIMENSIONS = new HashMap(9);
+                                                                   ^
+  required: Map<String,Dimension>
+  found:    HashMap
+./ProcessTrackMateXml.java:141: warning: [unchecked] unchecked conversion
+   public static final Map<String, Boolean> IS_INT = new HashMap(9);
+                                                     ^
+  required: Map<String,Boolean>
+  found:    HashMap
+./ProcessTrackMateXml.java:151: warning: [unchecked] unchecked conversion
+            List<ImagePlus> impAnalClose = new ArrayList();
+                                           ^
+  required: List<ImagePlus>
+  found:    ArrayList
+./ProcessTrackMateXml.java:488: warning: [unchecked] unchecked conversion
+               Map<String, Double> linkingPenalty = (Map)Stream.of(new Object[]{"MEAN_INTENSITY", 1.0D}, new Object[]{"QUALITY", 1.0D}).collect(Collectors.toMap((data) -> {
+                                                    ^
+  required: Map<String,Double>
+  found:    Map
+./ProcessTrackMateXml.java:634: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+                  stringsSpot = new ArrayList(edges);
+                                ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ProcessTrackMateXml.java:635: warning: [unchecked] unchecked method invocation: method sort in class Collections is applied to given types
+                  Collections.sort(stringsSpot, Spot.frameComparator);
+                                  ^
+  required: List<T>,Comparator<? super T>
+  found: ArrayList,Comparator<Spot>
+  where T is a type-variable:
+    T extends Object declared in method <T>sort(List<T>,Comparator<? super T>)
+./ProcessTrackMateXml.java:635: warning: [unchecked] unchecked conversion
+                  Collections.sort(stringsSpot, Spot.frameComparator);
+                                   ^
+  required: List<T>
+  found:    ArrayList
+  where T is a type-variable:
+    T extends Object declared in method <T>sort(List<T>,Comparator<? super T>)
+./ProcessTrackMateXml.java:669: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                     stringsSpot.add(valuesSpot);
+                                    ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ProcessTrackMateXml.java:672: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                  dataListSpot.add(stringsSpot);
+                                  ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ProcessTrackMateXml.java:700: warning: [unchecked] unchecked conversion
+                        Set<Spot> spots = new HashSet();
+                                          ^
+  required: Set<Spot>
+  found:    HashSet
+./ProcessTrackMateXml.java:767: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+                  List<Spot> spots = new ArrayList(model.getTrackModel().trackSpots(trackID));
+                                     ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ProcessTrackMateXml.java:767: warning: [unchecked] unchecked conversion
+                  List<Spot> spots = new ArrayList(model.getTrackModel().trackSpots(trackID));
+                                     ^
+  required: List<Spot>
+  found:    ArrayList
+./ProcessTrackMateXml.java:857: warning: [unchecked] unchecked conversion
+               List<List<String>> dataListTrack = new ArrayList();
+                                                  ^
+  required: List<List<String>>
+  found:    ArrayList
+./ProcessTrackMateXml.java:864: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                     dataListSpot.add(valuesTrack);
+                                     ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ProcessTrackMateXml.java:867: warning: [unchecked] unchecked method invocation: method add in interface List is applied to given types
+                  dataListTrack.add(dataListSpot);
+                                   ^
+  required: E
+  found: ArrayList
+  where E is a type-variable:
+    E extends Object declared in interface List
+./ProcessTrackMateXml.java:867: warning: [unchecked] unchecked conversion
+                  dataListTrack.add(dataListSpot);
+                                    ^
+  required: E
+  found:    ArrayList
+  where E is a type-variable:
+    E extends Object declared in interface List
+./ProcessTrackMateXml.java:895: warning: [unchecked] unchecked conversion
+                        Set<DefaultWeightedEdge> edges = new HashSet();
+                                                         ^
+  required: Set<DefaultWeightedEdge>
+  found:    HashSet
+./ProcessTrackMateXml.java:896: warning: [unchecked] unchecked conversion
+                        Set<Spot> spots = new HashSet();
+                                          ^
+  required: Set<Spot>
+  found:    HashSet
+./ProcessTrackMateXml.java:931: warning: [unchecked] unchecked conversion
+      List<Spot> objects = new ArrayList();
+                           ^
+  required: List<Spot>
+  found:    ArrayList
+./ProcessTrackMateXml.java:939: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+      List<String> features = new ArrayList(model.getFeatureModel().getSpotFeatures());
+                              ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+./ProcessTrackMateXml.java:939: warning: [unchecked] unchecked conversion
+      List<String> features = new ArrayList(model.getFeatureModel().getSpotFeatures());
+                              ^
+  required: List<String>
+  found:    ArrayList
+./ProcessTrackMateXml.java:942: warning: [unchecked] unchecked conversion
+      Map<String, String> featureUnits = new HashMap();
+                                         ^
+  required: Map<String,String>
+  found:    HashMap
+./ProcessTrackMateXml.java:953: warning: [unchecked] unchecked conversion
+      Map<String, String> infoTexts = new HashMap();
+                                      ^
+  required: Map<String,String>
+  found:    HashMap
+./ProcessTrackMateXml.java:988: warning: [unchecked] unchecked call to TablePanel(Iterable<O>,List<String>,BiFunction<O,String,Double>,Map<String,String>,Map<String,String>,Map<String,String>,Map<String,Boolean>,Map<String,String>,Supplier<FeatureColorGenerator<O>>,Function<O,String>,BiConsumer<O,String>,String,BiConsumer<O,Color>) as a member of the raw type TablePanel
+      TablePanel<Spot> table = new TablePanel(objects, features, featureFun, featureNames, featureShortNames, featureUnits, isInts, infoTexts, coloring, labelGenerator, labelSetter, "MANUAL_SPOT_COLOR", colorSetter);
+                               ^
+  where O is a type-variable:
+    O extends Object declared in class TablePanel
+./ProcessTrackMateXml.java:988: warning: [unchecked] unchecked conversion
+      TablePanel<Spot> table = new TablePanel(objects, features, featureFun, featureNames, featureShortNames, featureUnits, isInts, infoTexts, coloring, labelGenerator, labelSetter, "MANUAL_SPOT_COLOR", colorSetter);
+                               ^
+  required: TablePanel<Spot>
+  found:    TablePanel
+./ColorEditorTrack.java:152: error: cannot find symbol
+      column1.setCellRenderer(new ResultRendererC());
+                                  ^
+  symbol:   class ResultRendererC
+  location: class ColorEditorTrack
+./ColorEditorTrack.java:156: error: cannot find symbol
+      column2.setCellRenderer(new ResultRendererC());
+                                  ^
+  symbol:   class ResultRendererC
+  location: class ColorEditorTrack
+./ColorEditorTrack.java:160: error: cannot find symbol
+      column3.setCellRenderer(new ResultRendererC());
+                                  ^
+  symbol:   class ResultRendererC
+  location: class ColorEditorTrack
+./RegressionLE_.java:286: error: cannot find symbol
+            retVal = new LogarithmicFunction2D(coefficients[0], coefficients[1]);
+                         ^
+  symbol:   class LogarithmicFunction2D
+  location: class RegressionLE_
+./RegressionLE_.java:296: error: cannot find symbol
+            retVal = new ExponentialFunction2D(coefficients[0], coefficients[1]);
+                         ^
+  symbol:   class ExponentialFunction2D
+  location: class RegressionLE_
+./BackgroundSubtracter.java:175: error: variable value is already defined in method rollingBallBackground(ImageProcessor,double,boolean,boolean,boolean,boolean,boolean)
+                     float value = (float)((pxl & byteMask) >> shift) - bgPixels[p] + offset;
+                           ^
+./BackgroundSubtracter.java:176: error: variable valueToSubtract is already defined in method rollingBallBackground(ImageProcessor,double,boolean,boolean,boolean,boolean,boolean)
+                     float valueToSubtract = bgPixels[p] + offset;
+                           ^
+./BackgroundSubtracter.java:197: error: variable total is already defined in method rollingBallBackground(ImageProcessor,double,boolean,boolean,boolean,boolean,boolean)
+                  double total = 0.0D;
+                         ^
+./BackgroundSubtracter.java:245: error: variable dx is already defined in method lineSlideParabola(float[],int,int,int,float,float[],int[],float[])
+      float dx;
+            ^
+./ISBIChallengeExporterModified.java:55: error: method askForFileForSaving in class IOUtils cannot be applied to given types;
+      file = IOUtils.askForFileForSaving(file, parent, this.logger);
+                    ^
+  required: File,Frame
+  found: File,Frame,Logger
+  reason: actual and formal argument lists differ in length
+./ComputeMSD.java:39: error: variable i is already defined in method Compute(List<Integer>,ResultsTable)
+         for(int i = 0; i < rtSpots.size(); ++i) {
+                 ^
+./ComputeMSD.java:173: error: variable dt is already defined in method Compute(List<Integer>,ResultsTable)
+            for(int dt = 0; dt < tauMSS.length; ++dt) {
+                    ^
+./Chemotaxis_ToolModified.java:79: error: cannot find symbol
+      (this._dialog = new ScalingDialog(this.gui)).setHeight(this._plotHeight);
+                          ^
+  symbol:   class ScalingDialog
+  location: class Chemotaxis_ToolModified
+./Chemotaxis_ToolModified.java:143: error: incomparable types: int and Object
+               if (1 != list16.get(0) || SPTBatch_.imps.getStackSize() != list16.get(1)) {
+                     ^
+./Chemotaxis_ToolModified.java:143: error: incomparable types: int and Object
+               if (1 != list16.get(0) || SPTBatch_.imps.getStackSize() != list16.get(1)) {
+                                                                       ^
+./Chemotaxis_ToolModified.java:186: error: incompatible types: boolean cannot be converted to int
+      int intValue31 = false;
+                       ^
+./Chemotaxis_ToolModified.java:187: error: incompatible types: boolean cannot be converted to int
+      int intValue32 = false;
+                       ^
+./Chemotaxis_ToolModified.java:188: error: incompatible types: boolean cannot be converted to int
+      int n68 = false;
+                ^
+./Chemotaxis_ToolModified.java:191: error: incompatible types: boolean cannot be converted to int
+      int n70 = false;
+                ^
+./Chemotaxis_ToolModified.java:339: error: cannot find symbol
+            double[] centerofMassSeries = ChemotaxisStatistic.centerofMassSeries(intValue29, array16, array13, intValue16, list20);
+                                          ^
+  symbol:   variable ChemotaxisStatistic
+  location: class Chemotaxis_ToolModified
+./Chemotaxis_ToolModified.java:366: error: cannot find symbol
+            n9 = ChemotaxisStatistic.computeChemotaxisIndex(array16, array13, intValue29, n65, list20);
+                 ^
+  symbol:   variable ChemotaxisStatistic
+  location: class Chemotaxis_ToolModified
+./Chemotaxis_ToolModified.java:390: error: cannot find symbol
+            n9 = ChemotaxisStatistic.computeFMIIndex(array16, array13, intValue29, intValue16, 1, list20);
+                 ^
+  symbol:   variable ChemotaxisStatistic
+  location: class Chemotaxis_ToolModified
+./Chemotaxis_ToolModified.java:391: error: cannot find symbol
+            double computeFMIIndex2 = ChemotaxisStatistic.computeFMIIndex(array16, array13, intValue29, intValue16, 2, list20);
+                                      ^
+  symbol:   variable ChemotaxisStatistic
+  location: class Chemotaxis_ToolModified
+./Chemotaxis_ToolModified.java:410: error: cannot find symbol
+         list23 = ChemotaxisStatistic.computeDirectionality(array15, array16, list20, intValue16);
+                  ^
+  symbol:   variable ChemotaxisStatistic
+  location: class Chemotaxis_ToolModified
+./Chemotaxis_ToolModified.java:474: error: cannot find symbol
+         list14 = ChemotaxisStatistic.computeDistandVelocity("velocity", (float[][])this._listArrayList.get(n72), (float[][])this._listArrayList.get(n72 + 1), list20, intValue16, this._timeInterval);
+                  ^
+  symbol:   variable ChemotaxisStatistic
+  location: class Chemotaxis_ToolModified
+./Chemotaxis_ToolModified.java:499: error: cannot find symbol
+         list23 = ChemotaxisStatistic.computeDistandVelocity("accumulated distance", array15, array16, list20, intValue16, this._timeInterval);
+                  ^
+  symbol:   variable ChemotaxisStatistic
+  location: class Chemotaxis_ToolModified
+./Chemotaxis_ToolModified.java:500: error: cannot find symbol
+         list15 = ChemotaxisStatistic.computeDistandVelocity("euclid distance", array15, array16, list20, intValue16, this._timeInterval);
+                  ^
+  symbol:   variable ChemotaxisStatistic
+  location: class Chemotaxis_ToolModified
+./Chemotaxis_ToolModified.java:579: error: illegal start of type
+      if (this._dialog.auto) {
+         ^
+./Chemotaxis_ToolModified.java:919: error: illegal start of type
+         if (this._dialog.auto) {
+            ^
+./TraJClassifierTest_.java:98: error: variable i is already defined in method run(String)
+      int i;
+          ^
+./TraJClassifierTest_.java:163: error: variable i is already defined in method run(String)
+      for(int i = 0; i < this.tracksToClassify.size(); ++i) {
+              ^
+./TraJClassifierTest_.java:347: error: variable dcEstim is already defined in method run(String)
+                  AbstractTrajectoryFeatureModified dcEstim = new RegressionDiffusionCoefficientEstimatorModified(t, 1.0D / timelag, 1, t.size() / 3);
+                                                    ^
+./TraJClassifierTest_.java:426: error: variable i is already defined in method run(String)
+         for(int i = 0; i < this.parentTrajectories.size(); ++i) {
+                 ^
+./TraJClassifierTest_.java:546: error: variable Nconf is already defined in method classifyAndSegment(ArrayList<TrajectoryModified>,String,int,int,int,int)
+         int Nconf = Nconf + 1;
+             ^
+./drift/StaticDriftCalculatorModified.java:17: error: incompatible types: TrajectoryModified cannot be converted to T
+         T t = (TrajectoryModified)tracks.get(i);
+               ^
+  where T is a type-variable:
+    T extends TrajectoryModified declared in class StaticDriftCalculatorModified
+./ImagePlusReaderModified.java:72: error: cannot find symbol
+         StatusListener l = (StatusListener)var3.next();
+         ^
+  symbol:   class StatusListener
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:72: error: cannot find symbol
+         StatusListener l = (StatusListener)var3.next();
+                             ^
+  symbol:   class StatusListener
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:105: error: no suitable method found for add(Object)
+                  luts.add((Object)null);
+                      ^
+    method Collection.add(LUT) is not applicable
+      (argument mismatch; Object cannot be converted to LUT)
+    method List.add(LUT) is not applicable
+      (argument mismatch; Object cannot be converted to LUT)
+    method List.add(int,LUT) is not applicable
+      (actual and formal argument lists differ in length)
+./ImagePlusReaderModified.java:132: error: cannot find symbol
+      for(int s = 0; s < reader.getSeriesCount(); ++s) {
+                               ^
+  symbol:   method getSeriesCount()
+  location: variable reader of type ImageProcessorReader
+./ImagePlusReaderModified.java:139: error: variable imps is already defined in method readImages(boolean)
+      List<ImagePlus> imps = this.concatenate(imps);
+                      ^
+./ImagePlusReaderModified.java:163: error: cannot find symbol
+      this.notifyListeners(new StatusEvent(1, 1, "Creating image"));
+                               ^
+  symbol:   class StatusEvent
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:166: error: cannot find symbol
+      IFormatReader reader = this.process.getReader();
+      ^
+  symbol:   class IFormatReader
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:193: error: cannot find symbol
+      reader.setSeries(s);
+            ^
+  symbol:   method setSeries(int)
+  location: variable reader of type ImageProcessorReader
+./ImagePlusReaderModified.java:197: error: cannot find symbol
+      IMetadata meta = process.getOMEMetadata();
+      ^
+  symbol:   class IMetadata
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:198: error: cannot find symbol
+      int imageCount = reader.getImageCount();
+                             ^
+  symbol:   method getImageCount()
+  location: variable reader of type ImageProcessorReader
+./ImagePlusReaderModified.java:202: error: constructor BFVirtualStack in class BFVirtualStack cannot be applied to given types;
+         virtualStack = new BFVirtualStack(options.getId(), reader, false, false, false);
+                        ^
+  required: String,IFormatReader,boolean,boolean,boolean
+  found: String,ImageProcessorReader,boolean,boolean,boolean
+  reason: argument mismatch; ImageProcessorReader cannot be converted to IFormatReader
+./ImagePlusReaderModified.java:203: error: cannot find symbol
+      } catch (CacheException var18) {
+               ^
+  symbol:   class CacheException
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:205: error: cannot find symbol
+      } catch (FormatException var19) {
+               ^
+  symbol:   class FormatException
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:219: error: cannot find symbol
+            int index = reader.getIndex(0, c, 0);
+                              ^
+  symbol:   method getIndex(int,int,int)
+  location: variable reader of type ImageProcessorReader
+./ImagePlusReaderModified.java:224: error: cannot find symbol
+            } catch (IOException | FormatException var17) {
+                                   ^
+  symbol:   class FormatException
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:239: error: cannot find symbol
+      reader.setSeries(s);
+            ^
+  symbol:   method setSeries(int)
+  location: variable reader of type ImageProcessorReader
+./ImagePlusReaderModified.java:243: error: cannot find symbol
+      IMetadata meta = process.getOMEMetadata();
+      ^
+  symbol:   class IMetadata
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:256: error: cannot find symbol
+      Region region = process.getCropRegion(s);
+      ^
+  symbol:   class Region
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:283: error: cannot find symbol
+         String code = LuraWave.initLicenseCode();
+                       ^
+  symbol:   variable LuraWave
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:299: error: cannot find symbol
+         } catch (FormatException var13) {
+                  ^
+  symbol:   class FormatException
+  location: class ImagePlusReaderModified
+./ImagePlusReaderModified.java:300: error: cannot find symbol
+            LuraWave.promptLicenseCode(code, first);
+            ^
+  symbol:   variable LuraWave
+  location: class ImagePlusReaderModified
+Note: Some input files additionally use or override a deprecated API.
+Note: Some input files additionally use unchecked or unsafe operations.
+100 errors
+100 warnings

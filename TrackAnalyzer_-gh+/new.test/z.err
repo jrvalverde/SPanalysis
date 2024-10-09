@@ -1,0 +1,595 @@
+SPTBatch_.java:406: warning: [unchecked] unchecked conversion
+   List<List<List<String>>> dataAllItemsDef = new ArrayList();
+                                              ^
+  required: List<List<List<String>>>
+  found:    ArrayList
+SPTBatch_.java:426: warning: [unchecked] unchecked conversion
+   private static final Map<String, String> BRANCH_FEATURES_NAMES = new HashMap();
+                                                                    ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:427: warning: [unchecked] unchecked conversion
+   private static final Map<String, String> BRANCH_FEATURES_SHORTNAMES = new HashMap();
+                                                                         ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:428: warning: [unchecked] unchecked conversion
+   private static final Map<String, Boolean> BRANCH_FEATURES_ISINTS = new HashMap();
+                                                                      ^
+  required: Map<String,Boolean>
+  found:    HashMap
+SPTBatch_.java:429: warning: [unchecked] unchecked conversion
+   private static final Map<String, Dimension> BRANCH_FEATURES_DIMENSIONS = new HashMap();
+                                                                            ^
+  required: Map<String,Dimension>
+  found:    HashMap
+SPTBatch_.java:555: warning: [deprecation] setHeading(int,String) in ResultsTable has been deprecated
+               SPTBatch_.this.rtSpot.setHeading(MAX, (String)columHeadersFinalSpot[MAX]);
+                                    ^
+SPTBatch_.java:559: warning: [deprecation] setHeading(int,String) in ResultsTable has been deprecated
+               SPTBatch_.this.rtLink.setHeading(MAX, (String)columHeadersFinalLink[MAX]);
+                                    ^
+SPTBatch_.java:563: warning: [deprecation] setHeading(int,String) in ResultsTable has been deprecated
+               SPTBatch_.this.rtTrack.setHeading(MAX, (String)columHeadersFinalTrack[MAX]);
+                                     ^
+SPTBatch_.java:587: warning: [unchecked] unchecked conversion
+            SPTBatch_.this.selectedItems = new ArrayList();
+                                           ^
+  required: List<String>
+  found:    ArrayList
+SPTBatch_.java:931: warning: [unchecked] unchecked conversion
+               List<String> spotFilterFeature = new ArrayList();
+                                                ^
+  required: List<String>
+  found:    ArrayList
+SPTBatch_.java:932: warning: [unchecked] unchecked conversion
+               List<String> spotFilterValue = new ArrayList();
+                                              ^
+  required: List<String>
+  found:    ArrayList
+SPTBatch_.java:933: warning: [unchecked] unchecked conversion
+               List<String> spotFilterAbove = new ArrayList();
+                                              ^
+  required: List<String>
+  found:    ArrayList
+SPTBatch_.java:942: warning: [unchecked] unchecked conversion
+               List<String> trackFilterFeature = new ArrayList();
+                                                 ^
+  required: List<String>
+  found:    ArrayList
+SPTBatch_.java:943: warning: [unchecked] unchecked conversion
+               List<String> trackFilterValue = new ArrayList();
+                                               ^
+  required: List<String>
+  found:    ArrayList
+SPTBatch_.java:944: warning: [unchecked] unchecked conversion
+               List<String> trackFilterAbove = new ArrayList();
+                                               ^
+  required: List<String>
+  found:    ArrayList
+SPTBatch_.java:1014: warning: [unchecked] unchecked conversion
+               List<FeatureFilter> spotFilters = new ArrayList();
+                                                 ^
+  required: List<FeatureFilter>
+  found:    ArrayList
+SPTBatch_.java:1053: warning: [unchecked] unchecked conversion
+                  Map<String, Double> linkingPenalty = (Map)Stream.of(new Object[]{"MEAN_INTENSITY", 1.0D}, new Object[]{"QUALITY", 1.0D}).collect(Collectors.toMap((datax) -> {
+                                                       ^
+  required: Map<String,Double>
+  found:    Map
+SPTBatch_.java:1091: warning: [unchecked] unchecked conversion
+               List<FeatureFilter> trackFilters = new ArrayList();
+                                                  ^
+  required: List<FeatureFilter>
+  found:    ArrayList
+SPTBatch_.java:1343: warning: [unchecked] unchecked call to addAll(Collection<? extends E>) as a member of the raw type ArrayList
+                     framesByTrack.addAll(SPTBatch_.this.trackmate.getModel().getTrackModel().trackSpots(trackIDxxx));
+                                         ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:1430: warning: [unchecked] unchecked conversion
+                     SPTBatch_.nOfTracks = new ArrayList();
+                                           ^
+  required: List<Integer>
+  found:    ArrayList
+SPTBatch_.java:1436: warning: [unchecked] unchecked conversion
+                     SPTBatch_.this.indexes = new ArrayList();
+                                              ^
+  required: ArrayList<Integer>
+  found:    ArrayList
+SPTBatch_.java:1447: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                              framesByTrackx.add(Float.valueOf(spotJTablex.getModel().getValueAt(y, 8).toString()));
+                                                ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:1448: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                              framesByTrackSort.add(Float.valueOf(spotJTablex.getModel().getValueAt(y, 8).toString()));
+                                                   ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:1452: warning: [unchecked] unchecked method invocation: method sort in class Collections is applied to given types
+                        Collections.sort(framesByTrackSort);
+                                        ^
+  required: List<T>
+  found: ArrayList
+  where T is a type-variable:
+    T extends Comparable<? super T> declared in method <T>sort(List<T>)
+SPTBatch_.java:1452: warning: [unchecked] unchecked conversion
+                        Collections.sort(framesByTrackSort);
+                                         ^
+  required: List<T>
+  found:    ArrayList
+  where T is a type-variable:
+    T extends Comparable<? super T> declared in method <T>sort(List<T>)
+SPTBatch_.java:1555: warning: [unchecked] unchecked conversion
+                     SPTBatch_.this.excludeTrack = new ArrayList();
+                                                   ^
+  required: List<Boolean>
+  found:    ArrayList
+SPTBatch_.java:1627: warning: [unchecked] unchecked conversion
+                              List<Integer> nOfTracks = new ArrayList();
+                                                        ^
+  required: List<Integer>
+  found:    ArrayList
+SPTBatch_.java:1633: warning: [unchecked] unchecked conversion
+                              List<Double> allTracks = new ArrayList();
+                                                       ^
+  required: List<Double>
+  found:    ArrayList
+SPTBatch_.java:1634: warning: [unchecked] unchecked conversion
+                              List<Double> allTracksDef = new ArrayList();
+                                                          ^
+  required: List<Double>
+  found:    ArrayList
+SPTBatch_.java:1639: warning: [unchecked] unchecked conversion
+				 List<Double> perTrack = new ArrayList();
+				                         ^
+  required: List<Double>
+  found:    ArrayList
+SPTBatch_.java:1640: warning: [unchecked] unchecked conversion
+                                 List<Double> perTrackDef = new ArrayList();
+                                                            ^
+  required: List<Double>
+  found:    ArrayList
+SPTBatch_.java:2221: error: cannot find symbol
+                              (new PhotobleachingSpotPlot()).Compute();
+                                   ^
+  symbol: class PhotobleachingSpotPlot
+SPTBatch_.java:2267: error: cannot find symbol
+                        Chemotaxis_ToolModified chemotool = new Chemotaxis_ToolModified(edges);
+                        ^
+  symbol: class Chemotaxis_ToolModified
+SPTBatch_.java:2267: error: cannot find symbol
+                        Chemotaxis_ToolModified chemotool = new Chemotaxis_ToolModified(edges);
+                                                                ^
+  symbol: class Chemotaxis_ToolModified
+SPTBatch_.java:2275: warning: [unchecked] unchecked conversion
+                     ArrayList<Float> xByTrack = new ArrayList();
+                                                 ^
+  required: ArrayList<Float>
+  found:    ArrayList
+SPTBatch_.java:2280: warning: [unchecked] unchecked conversion
+                     ArrayList<Float> trackIDxxxx = new ArrayList();
+                                                    ^
+  required: ArrayList<Float>
+  found:    ArrayList
+SPTBatch_.java:2281: warning: [unchecked] unchecked conversion
+                     ArrayList<Integer> indexes = new ArrayList();
+                                                  ^
+  required: ArrayList<Integer>
+  found:    ArrayList
+SPTBatch_.java:2287: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        framesByTrack.add(Float.valueOf(spot.getFeature("FRAME").toString()));
+                                         ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:2289: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        framesByTrackx.add(Float.valueOf(spot.getFeature("POSITION_Y").toString()));
+                                          ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:2290: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        framesByTrackSort.add(Float.valueOf(spot.getFeature("FRAME").toString()));
+                                             ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:2293: warning: [unchecked] unchecked method invocation: method sort in class Collections is applied to given types
+                     Collections.sort(framesByTrackSort);
+                                     ^
+  required: List<T>
+  found: ArrayList
+  where T is a type-variable:
+    T extends Comparable<? super T> declared in method <T>sort(List<T>)
+SPTBatch_.java:2293: warning: [unchecked] unchecked conversion
+                     Collections.sort(framesByTrackSort);
+                                      ^
+  required: List<T>
+  found:    ArrayList
+  where T is a type-variable:
+    T extends Comparable<? super T> declared in method <T>sort(List<T>)
+SPTBatch_.java:2301: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        edges.add((Float)trackIDxxxx.get(yx));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:2302: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        edges.add((Float)framesByTrackSort.get(yx) + Float.valueOf("1.0"));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:2303: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        edges.add((Float)xByTrack.get((Integer)indexes.get(yx)));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:2304: warning: [unchecked] unchecked call to add(E) as a member of the raw type ArrayList
+                        edges.add((Float)framesByTrackx.get((Integer)indexes.get(yx)));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:2326: error: cannot find symbol
+                  TraJClassifierTest_ tc = new TraJClassifierTest_();
+                  ^
+  symbol: class TraJClassifierTest_
+SPTBatch_.java:2326: error: cannot find symbol
+                  TraJClassifierTest_ tc = new TraJClassifierTest_();
+                                               ^
+  symbol: class TraJClassifierTest_
+SPTBatch_.java:2331: error: cannot find symbol
+                  TrackProcessorMSD_Modified msdPlot = new TrackProcessorMSD_Modified();
+                  ^
+  symbol: class TrackProcessorMSD_Modified
+SPTBatch_.java:2331: error: cannot find symbol
+                  TrackProcessorMSD_Modified msdPlot = new TrackProcessorMSD_Modified();
+                                                           ^
+  symbol: class TrackProcessorMSD_Modified
+SPTBatch_.java:2336: error: cannot find symbol
+                  ClusterSizeAnalysis clusterAnal = new ClusterSizeAnalysis();
+                  ^
+  symbol: class ClusterSizeAnalysis
+SPTBatch_.java:2336: error: cannot find symbol
+                  ClusterSizeAnalysis clusterAnal = new ClusterSizeAnalysis();
+                                                        ^
+  symbol: class ClusterSizeAnalysis
+SPTBatch_.java:2427: error: incompatible types: boolean cannot be converted to int
+                     int counterx = false;
+                                    ^
+SPTBatch_.java:2428: warning: [unchecked] unchecked conversion
+                     List<Double> perTrack = new ArrayList();
+                                             ^
+  required: List<Double>
+  found:    ArrayList
+SPTBatch_.java:2489: warning: [unchecked] unchecked conversion
+                  List<Spot> spots1 = new ArrayList(SPTBatch_.this.trackmate.getModel().getSpots().getNSpots(true));
+                                      ^
+  required: List<Spot>
+  found:    ArrayList
+SPTBatch_.java:2490: warning: [unchecked] unchecked conversion
+                  Set<String> ySelectedSpotSet = new HashSet();
+                                                 ^
+  required: Set<String>
+  found:    HashSet
+SPTBatch_.java:2549: warning: [unchecked] unchecked conversion
+                  Set<String> ySelectedLinkSet = new HashSet();
+                                                 ^
+  required: Set<String>
+  found:    HashSet
+SPTBatch_.java:2555: warning: [unchecked] unchecked call to addAll(Collection<? extends E>) as a member of the raw type ArrayList
+                     edges.addAll(SPTBatch_.this.trackmate.getModel().getTrackModel().trackEdges(trackIDxx));
+                                 ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:2574: warning: [unchecked] unchecked method invocation: method buildPlotTitle in class SPTBatch_ is applied to given types
+                        String titlex = SPTBatch_.this.buildPlotTitle(featuresThisDimensionx, yDimensionsxx, SPTBatch_.this.xSelectedLink);
+                                                                     ^
+  required: Iterable<String>,Map<String,String>,String
+  found: List<String>,Map,String
+SPTBatch_.java:2574: warning: [unchecked] unchecked conversion
+                        String titlex = SPTBatch_.this.buildPlotTitle(featuresThisDimensionx, yDimensionsxx, SPTBatch_.this.xSelectedLink);
+                                                                                              ^
+  required: Map<String,String>
+  found:    Map
+SPTBatch_.java:2575: warning: [unchecked] unchecked method invocation: constructor <init> in class EdgeCollectionDataset is applied to given types
+                        ModelDataset datasetxxx = new EdgeCollectionDataset(SPTBatch_.model, SPTBatch_.selectionModel, SPTBatch_.this.ds, SPTBatch_.this.xSelectedLink, featuresThisDimensionx, edges, true);
+                                                  ^
+  required: Model,SelectionModel,DisplaySettings,String,List<String>,List<DefaultWeightedEdge>,boolean
+  found: Model,SelectionModel,DisplaySettings,String,List<String>,ArrayList,boolean
+SPTBatch_.java:2575: warning: [unchecked] unchecked conversion
+                        ModelDataset datasetxxx = new EdgeCollectionDataset(SPTBatch_.model, SPTBatch_.selectionModel, SPTBatch_.this.ds, SPTBatch_.this.xSelectedLink, featuresThisDimensionx, edges, true);
+                                                                                                                                                                                                ^
+  required: List<DefaultWeightedEdge>
+  found:    ArrayList
+SPTBatch_.java:2607: warning: [unchecked] unchecked conversion
+                  Set<String> ySelectedTrackSet = new HashSet();
+                                                  ^
+  required: Set<String>
+  found:    HashSet
+SPTBatch_.java:2611: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+                     SPTBatch_.this.tracksID = new ArrayList(SPTBatch_.this.trackmate.getModel().getTrackModel().unsortedTrackIDs(true));
+                                               ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:2611: warning: [unchecked] unchecked conversion
+                     SPTBatch_.this.tracksID = new ArrayList(SPTBatch_.this.trackmate.getModel().getTrackModel().unsortedTrackIDs(true));
+                                               ^
+  required: ArrayList<Integer>
+  found:    ArrayList
+SPTBatch_.java:2618: warning: [unchecked] unchecked method invocation: method getUniqueValues in class SPTBatch_ is applied to given types
+                     Set<Dimension> dimensionsx = SPTBatch_.this.getUniqueValues(ySelectedTrackSet, yDimensionsxx);
+                                                                                ^
+  required: Iterable<K>,Map<K,V>
+  found: Set<String>,Map
+  where K,V are type-variables:
+    K extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+    V extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+SPTBatch_.java:2618: warning: [unchecked] unchecked conversion
+                     Set<Dimension> dimensionsx = SPTBatch_.this.getUniqueValues(ySelectedTrackSet, yDimensionsxx);
+                                                                                                    ^
+  required: Map<K,V>
+  found:    Map
+  where K,V are type-variables:
+    K extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+    V extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+SPTBatch_.java:2618: warning: [unchecked] unchecked conversion
+                     Set<Dimension> dimensionsx = SPTBatch_.this.getUniqueValues(ySelectedTrackSet, yDimensionsxx);
+                                                                                ^
+  required: Set<Dimension>
+  found:    Set
+SPTBatch_.java:2625: warning: [unchecked] unchecked method invocation: method getCommonKeys in class SPTBatch_ is applied to given types
+                        List<String> featuresThisDimensionxx = SPTBatch_.getCommonKeys(dimensionx, ySelectedTrackSet, yDimensionsxx);
+                                                                                      ^
+  required: V,Iterable<K>,Map<K,V>
+  found: Dimension,Set<String>,Map
+  where V,K are type-variables:
+    V extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+    K extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+SPTBatch_.java:2625: warning: [unchecked] unchecked conversion
+                        List<String> featuresThisDimensionxx = SPTBatch_.getCommonKeys(dimensionx, ySelectedTrackSet, yDimensionsxx);
+                                                                                                                      ^
+  required: Map<K,V>
+  found:    Map
+  where K,V are type-variables:
+    K extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+    V extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+SPTBatch_.java:2625: warning: [unchecked] unchecked conversion
+                        List<String> featuresThisDimensionxx = SPTBatch_.getCommonKeys(dimensionx, ySelectedTrackSet, yDimensionsxx);
+                                                                                      ^
+  required: List<String>
+  found:    List
+SPTBatch_.java:2671: warning: [unchecked] unchecked conversion
+                  Map<String, Dimension> dimMap = new HashMap(2);
+                                                  ^
+  required: Map<String,Dimension>
+  found:    HashMap
+SPTBatch_.java:2674: warning: [unchecked] unchecked conversion
+                  Map<String, String> nameMap = new HashMap(2);
+                                                ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:2997: error: cannot find symbol
+            List<ImagePlus> impsList = (new ImagePlusReaderModified(process)).readImages(false);
+                                            ^
+  symbol:   class ImagePlusReaderModified
+  location: class SPTBatch_
+SPTBatch_.java:3015: warning: [unchecked] unchecked conversion
+      List<Spot> objects = new ArrayList();
+                           ^
+  required: List<Spot>
+  found:    ArrayList
+SPTBatch_.java:3023: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+      List<String> features = new ArrayList(model.getFeatureModel().getSpotFeatures());
+                              ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:3023: warning: [unchecked] unchecked conversion
+      List<String> features = new ArrayList(model.getFeatureModel().getSpotFeatures());
+                              ^
+  required: List<String>
+  found:    ArrayList
+SPTBatch_.java:3026: warning: [unchecked] unchecked conversion
+      Map<String, String> featureUnits = new HashMap();
+                                         ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:3037: warning: [unchecked] unchecked conversion
+      Map<String, String> infoTexts = new HashMap();
+                                      ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:3072: warning: [unchecked] unchecked call to TablePanel(Iterable<O>,List<String>,BiFunction<O,String,Double>,Map<String,String>,Map<String,String>,Map<String,String>,Map<String,Boolean>,Map<String,String>,Supplier<FeatureColorGenerator<O>>,Function<O,String>,BiConsumer<O,String>,String,BiConsumer<O,Color>) as a member of the raw type TablePanel
+      TablePanel<Spot> table = new TablePanel(objects, features, featureFun, featureNames, featureShortNames, featureUnits, isInts, infoTexts, coloring, labelGenerator, labelSetter, "MANUAL_SPOT_COLOR", colorSetter);
+                               ^
+  where O is a type-variable:
+    O extends Object declared in class TablePanel
+SPTBatch_.java:3072: warning: [unchecked] unchecked conversion
+      TablePanel<Spot> table = new TablePanel(objects, features, featureFun, featureNames, featureShortNames, featureUnits, isInts, infoTexts, coloring, labelGenerator, labelSetter, "MANUAL_SPOT_COLOR", colorSetter);
+                               ^
+  required: TablePanel<Spot>
+  found:    TablePanel
+SPTBatch_.java:3077: warning: [unchecked] unchecked conversion
+      List<DefaultWeightedEdge> objects = new ArrayList();
+                                          ^
+  required: List<DefaultWeightedEdge>
+  found:    ArrayList
+SPTBatch_.java:3085: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+      List<String> features = new ArrayList(model.getFeatureModel().getEdgeFeatures());
+                              ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:3085: warning: [unchecked] unchecked conversion
+      List<String> features = new ArrayList(model.getFeatureModel().getEdgeFeatures());
+                              ^
+  required: List<String>
+  found:    ArrayList
+SPTBatch_.java:3088: warning: [unchecked] unchecked conversion
+      Map<String, String> featureUnits = new HashMap();
+                                         ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:3100: warning: [unchecked] unchecked conversion
+      Map<String, String> infoTexts = new HashMap();
+                                      ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:3126: error: incompatible types: String cannot be converted to BiConsumer
+      TablePanel<DefaultWeightedEdge> table = new TablePanel(objects, features, featureFun, featureNames, featureShortNames, featureUnits, isInts, infoTexts, coloring, labelGenerator, labelSetter, "MANUAL_EGE_COLOR", colorSetter);
+                                                                                                                                                                                        ^
+SPTBatch_.java:3131: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+      List<Integer> objects = new ArrayList(model.getTrackModel().trackIDs(true));
+                              ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:3131: warning: [unchecked] unchecked conversion
+      List<Integer> objects = new ArrayList(model.getTrackModel().trackIDs(true));
+                              ^
+  required: List<Integer>
+  found:    ArrayList
+SPTBatch_.java:3132: warning: [unchecked] unchecked call to ArrayList(Collection<? extends E>) as a member of the raw type ArrayList
+      List<String> features = new ArrayList(model.getFeatureModel().getTrackFeatures());
+                              ^
+  where E is a type-variable:
+    E extends Object declared in class ArrayList
+SPTBatch_.java:3132: warning: [unchecked] unchecked conversion
+      List<String> features = new ArrayList(model.getFeatureModel().getTrackFeatures());
+                              ^
+  required: List<String>
+  found:    ArrayList
+SPTBatch_.java:3138: warning: [unchecked] unchecked conversion
+      Map<String, String> featureUnits = new HashMap();
+                                         ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:3149: warning: [unchecked] unchecked conversion
+      Map<String, String> infoTexts = new HashMap();
+                                      ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:3159: warning: [unchecked] unchecked call to TablePanel(Iterable<O>,List<String>,BiFunction<O,String,Double>,Map<String,String>,Map<String,String>,Map<String,String>,Map<String,Boolean>,Map<String,String>,Supplier<FeatureColorGenerator<O>>,Function<O,String>,BiConsumer<O,String>) as a member of the raw type TablePanel
+      TablePanel<Integer> table = new TablePanel(objects, features, featureFun, featureNames, featureShortNames, featureUnits, isInts, infoTexts, coloring, labelGenerator, labelSetter);
+                                  ^
+  where O is a type-variable:
+    O extends Object declared in class TablePanel
+SPTBatch_.java:3159: warning: [unchecked] unchecked conversion
+      TablePanel<Integer> table = new TablePanel(objects, features, featureFun, featureNames, featureShortNames, featureUnits, isInts, infoTexts, coloring, labelGenerator, labelSetter);
+                                  ^
+  required: TablePanel<Integer>
+  found:    TablePanel
+SPTBatch_.java:3172: warning: [unchecked] unchecked conversion
+      List<SPTBatch_.Branch> brs = new ArrayList();
+                                   ^
+  required: List<Branch>
+  found:    ArrayList
+SPTBatch_.java:3180: warning: [unchecked] unchecked conversion
+         Map<SPTBatch_.Branch, Set<List<Spot>>> successorMap = new HashMap();
+                                                               ^
+  required: Map<Branch,Set<List<Spot>>>
+  found:    HashMap
+SPTBatch_.java:3182: warning: [unchecked] unchecked conversion
+         Map<List<Spot>, SPTBatch_.Branch> branchMap = new HashMap();
+                                                       ^
+  required: Map<List<Spot>,Branch>
+  found:    HashMap
+SPTBatch_.java:3186: warning: [unchecked] unchecked conversion
+            List<Spot> branch = (List)var14.next();
+                                ^
+  required: List<Spot>
+  found:    List
+SPTBatch_.java:3220: warning: [unchecked] unchecked conversion
+            Set<List<Spot>> predecessors = new HashSet(incomingEdges.size());
+                                           ^
+  required: Set<List<Spot>>
+  found:    HashSet
+SPTBatch_.java:3225: warning: [unchecked] unchecked conversion
+               List<Spot> predecessorBranch = (List)branchGraph.getEdgeSource(edge);
+                                              ^
+  required: List<Spot>
+  found:    List
+SPTBatch_.java:3230: warning: [unchecked] unchecked conversion
+            Set<List<Spot>> successors = new HashSet(outgoingEdges.size());
+                                         ^
+  required: Set<List<Spot>>
+  found:    HashSet
+SPTBatch_.java:3235: warning: [unchecked] unchecked conversion
+               List<Spot> successorBranch = (List)branchGraph.getEdgeTarget(edge);
+                                            ^
+  required: List<Spot>
+  found:    List
+SPTBatch_.java:3240: warning: [unchecked] unchecked call to put(K,V) as a member of the raw type HashMap
+            predecessorMap.put(br, predecessors);
+                              ^
+  where K,V are type-variables:
+    K extends Object declared in class HashMap
+    V extends Object declared in class HashMap
+SPTBatch_.java:3247: warning: [unchecked] unchecked conversion
+            Set<List<Spot>> succs = (Set)successorMap.get(br);
+                                    ^
+  required: Set<List<Spot>>
+  found:    Set
+SPTBatch_.java:3248: warning: [unchecked] unchecked conversion
+            Set<SPTBatch_.Branch> succBrs = new HashSet(succs.size());
+                                            ^
+  required: Set<Branch>
+  found:    HashSet
+SPTBatch_.java:3252: warning: [unchecked] unchecked conversion
+               List<Spot> branch = (List)var40.next();
+                                   ^
+  required: List<Spot>
+  found:    List
+SPTBatch_.java:3259: warning: [unchecked] unchecked conversion
+            Set<List<Spot>> preds = (Set)predecessorMap.get(br);
+                                    ^
+  required: Set<List<Spot>>
+  found:    Set
+SPTBatch_.java:3260: warning: [unchecked] unchecked conversion
+            Set<SPTBatch_.Branch> predBrs = new HashSet(preds.size());
+                                            ^
+  required: Set<Branch>
+  found:    HashSet
+SPTBatch_.java:3264: warning: [unchecked] unchecked conversion
+               List<Spot> branch = (List)var43.next();
+                                   ^
+  required: List<Spot>
+  found:    List
+SPTBatch_.java:3280: warning: [unchecked] unchecked conversion
+      Map<String, String> featureUnits = new HashMap();
+                                         ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:3284: warning: [unchecked] unchecked conversion
+      Map<String, String> infoTexts = new HashMap();
+                                      ^
+  required: Map<String,String>
+  found:    HashMap
+SPTBatch_.java:3294: error: incompatible types: HashMap cannot be converted to BiConsumer
+      TablePanel<SPTBatch_.Branch> table = new TablePanel(brs, BRANCH_FEATURES, featureFun, BRANCH_FEATURES_NAMES, BRANCH_FEATURES_SHORTNAMES, featureUnits, BRANCH_FEATURES_ISINTS, infoTexts, colorSupplier, labelGenerator, predecessorMap);
+                                                                                                                                                                                                                               ^
+SPTBatch_.java:3303: error: incompatible types: Object cannot be converted to K
+         K key = (Object)var5.next();
+                 ^
+  where K,V are type-variables:
+    K extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+    V extends Object declared in method <K,V>getUniqueValues(Iterable<K>,Map<K,V>)
+SPTBatch_.java:3315: error: incompatible types: Object cannot be converted to K
+         K key = (Object)var5.next();
+                 ^
+  where K,V are type-variables:
+    K extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+    V extends Object declared in method <K,V>getCommonKeys(V,Iterable<K>,Map<K,V>)
+SPTBatch_.java:3894: error: cannot find symbol
+                  (new traJParametersWindow()).run("");
+                       ^
+  symbol: class traJParametersWindow
+SPTBatch_.java:4045: error: package traJParametersWindow does not exist
+                  SPTBatch_.pref1.put(SPTBatch_.TRACKMATE_MIN_TRACK, traJParametersWindow.minLengthText.getText());
+                                                                                         ^
+SPTBatch_.java:4046: error: package traJParametersWindow does not exist
+                  SPTBatch_.pref1.put(SPTBatch_.TRACKMATE_WINDOW, traJParametersWindow.windowText.getText());
+                                                                                      ^
+SPTBatch_.java:4047: error: package traJParametersWindow does not exist
+                  SPTBatch_.pref1.put(SPTBatch_.TRACKMATE_MIN_SEGMENT, traJParametersWindow.minSegText.getText());
+                                                                                           ^
+Note: ./Dialog4BgSub0.java uses or overrides a deprecated API.
+Note: Some input files additionally use unchecked or unsafe operations.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+19 errors
+100 warnings

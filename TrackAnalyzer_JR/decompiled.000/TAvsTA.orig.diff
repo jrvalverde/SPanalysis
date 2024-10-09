@@ -1,0 +1,38 @@
+Only in TrackAnalyzer_: images
+Only in TrackAnalyzer_.orig: p
+diff -r TrackAnalyzer_/TrackAnalyzer_.java TrackAnalyzer_.orig/TrackAnalyzer_.java
+52,65c52,65
+<          LookAndFeelInfo[] var5;
+<          int var4 = (var5 = UIManager.getInstalledLookAndFeels()).length;
+< 
+<          for(int var3 = 0; var3 < var4; ++var3) {
+<             LookAndFeelInfo info = var5[var3];
+<             if ("Nimbus".equals(info.getName())) {
+<                UIManager.setLookAndFeel(info.getClassName());
+<                break;
+<             }
+<          }
+<       } catch (UnsupportedLookAndFeelException var19) {
+<       } catch (ClassNotFoundException var20) {
+<       } catch (InstantiationException var21) {
+<       } catch (IllegalAccessException var22) {
+---
+> 	  for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+> 		  if ("Nimbus".equals(info.getName())) {
+> 			  UIManager.setLookAndFeel(info.getClassName());
+> 			  break;
+> 		  }
+> 	  }
+>       } catch (UnsupportedLookAndFeelException ex) {
+>       		
+>       } catch (ClassNotFoundException ex) {
+>           println(ex.getMessage());
+>       } catch (InstantiationException ex) {
+>           println(ex.getMessage());
+>       } catch (IllegalAccessException ex) {
+>           println(ex.getMessage());
+71a72
+>       
+78a80
+>       
+Only in TrackAnalyzer_.orig: TrackAnalyzer_.java.00
